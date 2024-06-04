@@ -1,0 +1,66 @@
+{
+    "Human": {
+        "Weight": 1,
+        "Description": "+2 Charisma when pure, -2 Resisting Curses when pure"
+    },
+    "Elf": {
+        "Weight": 1,
+        "Description": "animals are friendlier +2 to rolls to calm animals, but you are fragile"
+    },
+    "Dwarf": {
+        "Weight": 1,
+        "Description": "you can take a beating, but have -2 on fleeing"
+    },
+    "Halfling": {
+        "Weight": 1,
+        "Description": "Eat less, +1 to dodging attacks and disease, -1 on trap rolls, Fragile"
+    },
+    "Kobold": {
+        "Weight": 1,
+        "Description": "you gain access to sacred ground, and get advantage on combat and trap rolls in it, but your small frame renders some weapons too heavy"
+    },
+    "Gnoll": {
+        "Weight": 1,
+        "Description": "everyone hates you, but when you see a fellow Gnoll get hurt, you get advantage on your next action"
+    },
+    "Spider": {
+        "Weight": 1,
+        "Description": "You have a subspecies, and do more damage, but without magic you can't pick things up larger then a ring, you also get a subspecies specific venom, and access to the Hive"
+    },
+    "Snake": {
+        "Weight": 1,
+        "Description": "you gain access to the library, you are naturally adapted to magic, getting advantage against it and with it, but no limbs, you also get venom"
+    },
+    "Ratfolk": {
+        "Weight": 1,
+        "Description": "You will always get diseased when there is a chance, but it affects them differently, the more diseased a Ratfolk gets, the more deadly they are, but the more unstable too, you need more food, but rats are friendly"
+    },
+    "Kenku": {
+        "Weight": 1,
+        "Description": "Can only mimic remembered speech, but always identifies trapped chests"
+    },
+    "Tiefling": {
+        "Weight": 1,
+        "Description": "Fiends are more friendly, +2 to resisting curse, Holy is bad for you"
+    },
+    "Freak": {
+        "Weight": 1,
+        "Description": "start with 0-2 upsides and 1-2 downsides, appearance varies"
+    },
+    "Goblin": {
+        "Weight": 1,
+        "Description": "Trap Rooms are replaced with a random other room at the beginning of each day, all rare items when found are found as their common counterparts"
+    },
+    "Lizardfork": {
+        "Weight": 1,
+        "Description": "Poisons and Venoms duration halved, Drug and Potion durations doubled, barter skills suffer, Technology skills suffer"
+    },
+    "God-Touched": {
+        "Weight": 1,
+        "Description": "Gain Plus 3 to all roles when not Oathed or Religious, but immediately bind to the first religion or oath seen, gaining other benefits and downsides"
+    },
+	"Raptor": {
+		"Weight": 1,
+		"Description": "You have access to hidden nests and tunnels, Agility, which for a turn you dodge all attacks, but your mental abilities will be most of the time shot, and instincts will control some of your life, you will forget complex things easily."
+	}
+}

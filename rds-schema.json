@@ -1,0 +1,47 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+
+	"title": "RDS Roll Table",
+	"description": "A roll table for use with Random Dungeon Simulator.",
+
+	"type": "object",
+
+	"properties": {
+		"$schema": {
+			"type": "string",
+			"description": "The schema that this object adheres to.",
+			"enum": ["./rds-schema.json"]
+		}
+	},
+
+	"additionalProperties": {
+		"title": "Roll Table",
+		"type": "object",
+		"description": "A roll table.",
+		"additionalProperties": {
+			"type": "object",
+			"description": "A roll table entry.",
+			"title": "Roll Table Entry",
+			"properties": {
+				"Weight": {
+					"type": "number",
+					"description": "The weight of this entry in the table.",
+					"default": 1,
+					"minimum": 1
+				},
+				"LinkedRollTables": {
+					"type": "array",
+					"description": "A list of roll tables that should be rolled on if this entry is selected.",
+					"items": {
+						"type": "string",
+						"description": "The name of the roll table to roll on."
+					}
+				},
+				"Description": {
+					"type": "string",
+					"description": "A description of this entry."
+				}
+			}
+		}
+	}
+}

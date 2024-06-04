@@ -1,0 +1,2477 @@
+{
+	"$schema": "./rds-schema.json",
+	"Rooms": {
+		"Rare Loot": {
+			"Weight": 2,
+			"LinkedRollTables": ["Rare Loot"]
+		},
+		"Common Loot": {
+			"Weight": 7,
+			"LinkedRollTables": ["Common Loot"]
+		},
+		"Trapped Chest": {
+			"Weight": 3,
+			"LinkedRollTables": ["Traps", "Common Loot"]
+		},
+		"Trapped Chest with Rare Loot": {
+			"Weight": 1,
+			"LinkedRollTables": ["Traps", "Rare Loot"]
+		},
+		"Cursed Loot": {
+			"Weight": 1,
+			"LinkedRollTables": ["Cursed Loot"]
+		},
+		"Weak Enemy": {
+			"Weight": 5,
+			"LinkedRollTables": ["Enemies"]
+		},
+		"Normal Enemy": {
+			"Weight": 5,
+			"LinkedRollTables": ["Enemies"]
+		},
+		"Strong Enemy": {
+			"Weight": 4,
+			"LinkedRollTables": ["Enemies"]
+		},
+		"Boss": {
+			"Weight": 3,
+			"LinkedRollTables": ["Bosses"]
+		},
+		"Trap": {
+			"Weight": 4,
+			"LinkedRollTables": ["Traps"]
+		},
+		"Object": {
+			"Weight": 5,
+			"LinkedRollTables": ["Objects"]
+		},
+		"Room Select": {
+			"Weight": 1,
+			"Description": "3 Different Rooms for the player to choose, exit is never option",
+			"LinkedRollTables": ["Themes", "Themes", "Themes"]
+		},
+		"Lore, Event, or Other": {
+			"Weight": 1
+		},
+		"Escape": {
+			"Weight": 1,
+			"Description": "Only if player is a dragon or after 1 boss kill, boss otherwise",
+			"LinkedRollTables": ["Bosses"]
+		},
+		"Trader/Shop": {
+			"Weight": 3,
+			"LinkedRollTables": ["Traders"]
+		},
+		"Painting": {
+			"Weight": 3,
+			"LinkedRollTables": ["Paintings"]
+		},
+		"Packed Chest": {
+			"Weight": 2,
+			"Description": "2-3 Rares, 0-1 cursed items, but curse when opened",
+			"LinkedRollTables": ["Rare Loot", "Rare Loot", "Rare Loot", "Cursed Loot"]
+		},
+		"Statue": {
+			"Weight": 3,
+			"LinkedRollTables": ["Deities"]
+		},
+		"Altar": {
+			"Weight": 2,
+			"LinkedRollTables": ["Altars"]
+		},
+		"Theme Shift, or Objective": {
+			"Weight": 5,
+			"LinkedRollTables": ["Themes"]
+		},
+		"Event, or Objective": {
+			"Weight": 7
+		},
+		"Forsaken, Event, or Objective": {
+			"Weight": 2
+		},
+		"Totem": {
+			"Weight": 1,
+			"LinkedRollTables": ["Totem Piece", "Totem Piece", "Totem Piece"]
+		}
+	},
+
+	"Enemies": {
+		"Slime": {
+			"Weight": 1,
+			"Description": "Color for difficulty"
+		},
+		"Kobold": {
+			"Weight": 1
+		},
+		"Good-aligned Adventurer": {
+			"Weight": 1
+		},
+		"Neutral-aligned Adventurer": {
+			"Weight": 1
+		},
+		"Evil-aligned Adventurer": {
+			"Weight": 1
+		},
+		"Swarm": {
+			"Weight": 1,
+			"Description": "Bugs or rats or snakes or something"
+		},
+		"Wailing Cat or other Hex Spawn": {
+			"Weight": 1,
+			"Description": "like poxers"
+		},
+		"Drinker": {
+			"Weight": 1,
+			"Description": "Weeper for Hard/boss"
+		},
+		"Zombie, Skeletons, or other undead": {
+			"Weight": 1
+		},
+		"Bloodsucker": {
+			"Weight": 1,
+			"Description": "Jukefly for weak"
+		},
+		"Rust Monster, Disenchanter, or Other": {
+			"Weight": 1
+		},
+		"Animated Weapon": {
+			"Weight": 1,
+			"Description": "Animated Armor for Hard"
+		},
+		"Imp": {
+			"Weight": 1,
+			"Description": "Or multiple imps, or stronger demons on harder difficulties"
+		},
+		"Librarian Snake": {
+			"Weight": 1,
+			"Description": "Mystic Snake for Hard, Queen for Boss"
+		},
+		"Wisp, or other spiritual or folklore enemies": {
+			"Weight": 1
+		},
+		"Observer, Mimicspawn, or other misleading or odd creatures": {
+			"Weight": 1
+		},
+		"Construct": {
+			"Weight": 1,
+			"Description": "Difficulty scales like all things"
+		},
+		"Exile/Criminal/Other": {
+			"Weight": 1,
+			"Description": "Any Alignment"
+		},
+		"Wild Animal": {
+			"Weight": 1
+		},
+		"Tame Animal": {
+			"Weight": 1
+		},
+		"Dungeon Resident Spider": {
+			"Weight": 1,
+			"Description": "Intelligence varies unless a drone, then mindless"
+		},
+		"Cursed Adventurer": {
+			"Weight": 1,
+			"Description": "Any Alignment"
+		},
+		"Gnoll": {
+			"Weight": 1,
+			"Description": "Or other Half Demons, like Merrows"
+		},
+		"Pixie or other Fae creatures": {
+			"Weight": 1
+		},
+		"Delli Moth, Grick, Or other Underdark creatures": {
+			"Weight": 1
+		},
+		"Mushroom Person or other dungeon-lurking humanoids": {
+			"Weight": 1
+		},
+		"Goblinoid": {
+			"Weight": 1,
+			"Description": "Goblins, Hobgoblins, or Bugbears"
+		},
+		"Spirit": {
+			"Weight": 1,
+			"Description": "Attempts to possess the character, if save passes, spirit is destroyed, on fail, spirit controls for certain amount of rooms determined by failed saves"
+		},
+		"Harpy, or other monstrous humanoids": {
+			"Weight": 1
+		},
+		"Rogulik": {
+			"Weight": 1,
+			"Description": "Like Adventurer, but an absolute 4th wall breaking RPG player, appears insane, can't be reasoned with"
+		}
+	},
+
+	"Rare Loot": {
+		"Sharpened Sword": {
+			"Weight": 1
+		},
+		"Sharpened Axe": {
+			"Weight": 1
+		},
+		"Sharpened Dagger": {
+			"Weight": 1
+		},
+		"Plate Armor": {
+			"Weight": 1
+		},
+		"Plate Shield": {
+			"Weight": 1
+		},
+		"Ring of Resist Magic": {
+			"Weight": 1,
+			"Description": "Or other high tier ring"
+		},
+		"Necklace of Sense Curse": {
+			"Weight": 1,
+			"Description": "Or other high tier necklace"
+		},
+		"Greater Health Potion": {
+			"Weight": 1,
+			"Description": "Or other Greater Potion"
+		},
+		"Intricate Crossbow": {
+			"Weight": 1,
+			"Description": "Starts with bolt quiver of 1 bolt, gain one bolt with each 9 rolled on chests"
+		},
+		"Plate Helmet": {
+			"Weight": 1
+		},
+		"Balanced Flail": {
+			"Weight": 1
+		},
+		"Sharpened Spear": {
+			"Weight": 1
+		},
+		"Tome of a random spell": {
+			"Weight": 1
+		},
+		"Trinket of Soul Steal": {
+			"Weight": 1,
+			"Description": "If you die, you possess your killer, if killed with a trap, you posses the closest creature"
+		},
+		"Kobold Sword": {
+			"Weight": 1
+		},
+		"Wand of something": {
+			"Weight": 1,
+			"Description": "Could be a normal spell, or something custom"
+		},
+		"Balanced Rapier": {
+			"Weight": 1
+		},
+		"Battle-Hardened Mace": {
+			"Weight": 1
+		},
+		"Master-Crafted Staff": {
+			"Weight": 1
+		},
+		"Ring of Life": {
+			"Weight": 1
+		},
+		"50 Gold": {
+			"Weight": 5
+		},
+		"Drugs": {
+			"Weight": 2,
+			"LinkedRollTables": ["Drugs"]
+		},
+		"Upgrade Material": {
+			"Weight": 1
+		},
+		"Wisp in a Jar": {
+			"Weight": 1
+		},
+		"Dragon Blood Vial": {
+			"Weight": 1
+		}
+	},
+
+	"Common Loot": {
+		"Rusty Sword": {
+			"Weight": 1
+		},
+		"Rusty Axe": {
+			"Weight": 1
+		},
+		"Rusty Dagger": {
+			"Weight": 1
+		},
+		"Decrepit Armor": {
+			"Weight": 1
+		},
+		"Decrepit Shield": {
+			"Weight": 1
+		},
+		"Leather Tunic": {
+			"Weight": 1
+		},
+		"Necklace of Resist Fire": {
+			"Weight": 1,
+			"Description": "Or other lowrider/tradeoff necklace"
+		},
+		"Ring of Resist Frost": {
+			"Weight": 1,
+			"Description": "Or other lowrider/tradeoff ring"
+		},
+		"Wooden Bow": {
+			"Weight": 1,
+			"Description": "Start with quiver of one arrow"
+		},
+		"Decrepit Helmet": {
+			"Weight": 1
+		},
+		"Awkward Flail": {
+			"Weight": 1
+		},
+		"Broom": {
+			"Weight": 1
+		},
+		"Brick of Brick": {
+			"Weight": 1
+		},
+		"Scroll of a random spell": {
+			"Weight": 1
+		},
+		"Flask with Something": {
+			"Weight": 1
+		},
+		"Rusted Kobold Sword": {
+			"Weight": 1
+		},
+		"Flimsy Rapier": {
+			"Weight": 1
+		},
+		"Poorly Balanced Mace": {
+			"Weight": 1
+		},
+		"Chipped Spear": {
+			"Weight": 1
+		},
+		"Ring of Mundane": {
+			"Weight": 1
+		},
+		"10 Gold": {
+			"Weight": 5
+		},
+		"Drugs": {
+			"Weight": 2,
+			"LinkedRollTables": ["Drugs"]
+		},
+		"Bucket": {
+			"Weight": 1
+		},
+		"Crude Map": {
+			"Weight": 1
+		},
+		"Frying Pan": {
+			"Weight": 1
+		}
+	},
+
+	"Traps": {
+		"Curse": {
+			"Weight": 1,
+			"LinkedRollTables": ["Curses"]
+		},
+		"Dart": {
+			"Weight": 3
+		},
+		"Arrow": {
+			"Weight": 2
+		},
+		"Fire": {
+			"Weight": 1
+		},
+		"Polymorph": {
+			"Weight": 1
+		},
+		"Slimed (Blue Slime eats flesh, Red Slime eats metal, other Slime colors optional)": {
+			"Weight": 1
+		},
+		"Magic! (Could be an offensive spell, polymorph, or other feats of magic": {
+			"Weight": 1
+		},
+		"Bind Trap (Net or something)": {
+			"Weight": 3
+		},
+		"Teleport": {
+			"Weight": 3,
+			"LinkedRollTables": ["Themes", "Rooms"]
+		},
+		"Poison (Contains a -1 to all non-luck rolls for a time)": {
+			"Weight": 3
+		},
+		"Venom (Contains a -3 to a specific type of roll for a time: Physical, Mental, Spiritual": {
+			"Weight": 2
+		},
+		"Syringe (Contains either a drug, or mutagen": {
+			"Weight": 1,
+			"LinkedRollTables": ["Drugs"]
+		},
+		"Beartraps (Or Mimic if it is a chest": {
+			"Weight": 2
+		},
+		"Trap Door": {
+			"Weight": 2,
+			"Description": "Roll d4, 1=liquid or goo, 2=nothing but a floor, 3=harmful trap, 4=secret room"
+		},
+		"Summon Enemy": {
+			"Weight": 2,
+			"LinkedRollTables": ["Enemies"]
+		},
+		"Ice Magic": {
+			"Weight": 1
+		},
+		"Something Horrible": {
+			"Weight": 1,
+			"Description": "...good luck."
+		}
+	},
+
+	"Cursed Loot": {
+		"Ring of Curse Attraction": {
+			"Weight": 1,
+			"Description": "Gives the player a unique curse, starts building curse energy, when max energy reached, ring breaks and the curse turns into a god-curse.",
+			"LinkedRollTables": ["Curses"]
+		},
+		"Ring of Dog Friendship": {
+			"Weight": 1,
+			"Description": "Player can turn into a weredog, but mental abilities decrease over long time (when used) to dumb dog."
+		},
+		"Spider Mask": {
+			"Weight": 1,
+			"Description": "Slowly Turns the wearer into a giant spider"
+		},
+		"Happy Helmet": {
+			"Weight": 1,
+			"Description": "Causes unreasonable happiness"
+		},
+		"Goopy Cheeseburger": {
+			"Weight": 1,
+			"Description": "A delicious looking cheeseburger that turns whoever consumes it into a Goop Monster, or give terrible eternal indigestion"
+		},
+		"Goblin King's Crown": {
+			"Weight": 1,
+			"Description": "Hideously deforms the appearance of the wearer, but gives them the ability to command Goblins"
+		},
+		"Weakness Ring": {
+			"Weight": 1,
+			"Description": "Elemental Fraility"
+		},
+		"Gloves of Infinity": {
+			"Weight": 1,
+			"Description": "Snapping your fingers allows you to wish for anything"
+		},
+		"Keystone Ring": {
+			"Weight": 1,
+			"Description": "First creature you see, and you fail a roll upon seeing (roll difficulty depends on exposure and danger, more is harder), you slowly change into them"
+		},
+		"Helix Ring": {
+			"Weight": 1,
+			"Description": "Gives you a second head, complete with it's own mind, memories, and half the body is controlled by it"
+		},
+		"Magic Mirror": {
+			"Weight": 1,
+			"Description": "You lose your face, and with it, your senses of sight, and smell!"
+		},
+		"Vial of Blood": {
+			"Weight": 1,
+			"Description": "When you next get hit, it has a chance to break, Polymorphing into the blood owner, but gives benefits before breaking"
+		},
+		"Teeth Necklace": {
+			"Weight": 1,
+			"Description": "determined by the teeth, will alter mental abilities, personality, morals, and habits, also changes some visual stuff"
+		},
+		"Cursed amulet of soul stealing": {
+			"Weight": 1
+		},
+		"Raptor Skull Helmet": {
+			"Weight": 1,
+			"Description": "Good Armor, the wearer will slowly adopt instincts, gain knowledge of draconic and raptors become friendly"
+		},
+		"Cursed Amulet of Sense Curse": {
+			"Weight": 1,
+			"Description": "Curses EVERYTHING"
+		},
+		"Ring of Wish": {
+			"Weight": 1,
+			"Description": "Grants wishes, but has a large chance to twist it"
+		},
+		"Helm of the Water Seeker": {
+			"Weight": 1,
+			"Description": "Cursed Plate Helmet that causes the wearer to feel an unquenchable thirst, gives waterbreathing"
+		},
+		"Ring of the Fool": {
+			"Weight": 1,
+			"Description": "Applies Curse of the fool upon the wearer"
+		},
+		"\"Special\" Ring": {
+			"Weight": 1,
+			"Description": "Causes lapses of judgement/intellect, Mental Magic Immunity"
+		},
+		"Witch's Eye": {
+			"Weight": 1,
+			"Description": "A small glass eye, it will violently attack one of the person's eyes and replace it"
+		},
+		"Cursed Will": {
+			"Weight": 1,
+			"Description": "Reader of this scroll will be cursed with Curse of the Mentor, but instead of the first person they see, it is randomized"
+		},
+		"Ring of Tomorrow": {
+			"Weight": 1,
+			"Description": "Wearing this ring causes the wearer to be infected by green slime, even in late stages they will retain their mind"
+		},
+		"Evil Doll": {
+			"Weight": 1,
+			"Description": "Upon first touching the doll, they get cut and spill blood on it, it disappears to another point in the dungeon, and they learn the true nature of the doll"
+		},
+		"Vial of Curse": {
+			"Weight": 1,
+			"Description": "Contains a random curse and shatters when touched",
+			"LinkedRollTables": ["Curses"]
+		},
+		"Xal's Helmet": {
+			"Weight": 1,
+			"Description": "Shifts the wearers attitude towards life to be egotistical(Resistable), which alters how people look at you"
+		},
+		"Soul Lens": {
+			"Weight": 1,
+			"Description": "Allows you to identify the nature of any magic, but eventually will rip out your soul"
+		},
+		"Mirror of Many Faces": {
+			"Weight": 1,
+			"Description": "Randomly changes your race, your memories are modified as if you were born as that race, but you remember using the mirror"
+		},
+		"Gem of Unity": {
+			"Weight": 1,
+			"Description": "When touching another sapient creature, you fuse with them, becoming a fusion of them both, this can happen up to 1-3 times"
+		},
+		"Standard Ring": {
+			"Weight": 1,
+			"Description": "When worn, brands the wearer, wearer suffers a different curse every room"
+		},
+		"Cursed Gold": {
+			"Weight": 1,
+			"Description": "Random Curse",
+			"LinkedRollTables": ["Curses"]
+		},
+		"Redeemer": {
+			"Weight": 1,
+			"Description": "A sword that, when something is slain, the slayer becomes the same species"
+		},
+		"Cursed Bird Flute": {
+			"Weight": 1,
+			"Description": "Sounds just like a bird, Calms hearts, use it too much and it might be yours forever"
+		},
+		"Foul Helmet": {
+			"Weight": 1,
+			"Description": "Grotesque iron helmet that resembles a cursed beast's head"
+		},
+		"Shrunken Goat Head of Juxidos": {
+			"Weight": 1,
+			"Description": "You slowly become a freak, a creature that shouldn't exist, comes with it's own downsides and benefits"
+		},
+		"Die of Fate": {
+			"Weight": 1,
+			"Description": "a 20 sided dice that appears to be made of Titan Bone, rolling it has special effects, if you dare"
+		},
+		"Controller": {
+			"Weight": 1,
+			"Description": "You can control someone else, but when they get hit, you roll a d20, and the controller breaks, if the controlled dies, you roll a d20, and if it is below 8, you become what you controlled, and the controller breaks, some damage the controlled takes might be done to you if it is magical"
+		},
+		"Painter's Brush": {
+			"Weight": 1,
+			"Description": "Upon pick up, you suddenly feel inspired to paint! 'Blank' rooms are replaced with Canvas' and painting supplies, and what you paint becomes reality, but you are inspired to make a 'Masterwork' painting, which will in one way or another be the end of the curse, Creativity is judged by the player, and their character, paint what feels to fit your character"
+		},
+		"Amulet of Mimic Friendship": {
+			"Weight": 1,
+			"Description": "All chests are mimics, but they are less hostile, make more deals, that and all mimics contain rare or above!"
+		},
+		"Odd Quartz": {
+			"Weight": 1,
+			"Description": "upon pick up, will take the form of an item that can be related to a deity, species, or make, you will start to worship it, and the item will modify other cursed to serve its will! and when held, you can hear a guiding voice"
+		},
+		"Rabbit's Paw": {
+			"Weight": 1,
+			"Description": "Gives better luck, but your hands suffer in dexterity, to the point where they might become useless paws/dull claws"
+		},
+		"Tilted Coin": {
+			"Weight": 1,
+			"Description": "If it lands on heads, doubles an item/effect/outcome, on tails it removes it"
+		},
+		"Beast Collar": {
+			"Weight": 1,
+			"Description": "You are forced to walk on all fours, become more creature-like when viewed as an animal"
+		},
+		"Neko Surplus!": {
+			"Weight": 1,
+			"Description": "A scroll, reading it you an exotic cursed item, and forces it upon you!",
+			"LinkedRollTables": ["Cursed Loot"]
+		},
+		"Eye of Beholder": {
+			"Weight": 1,
+			"Description": "replaces your eyes and modifies your face to be Beholder like, can eye beam every 5 rooms, but you start to become more and more like a beholder, paranoia and reality bending included!"
+		},
+		"Cursed Fancy Shoes/Bracers": {
+			"Weight": 1,
+			"Description": "If you are plantigrade, you are forced to walk digitigrade, if you are digitigrade, you are forced to walk plantigrade! Causes imbalance"
+		},
+		"Snake Skin Bracer": {
+			"Weight": 1,
+			"Description": "The arm it is stuck onto becomes a snake, with its own mind"
+		},
+		"Sketchbook of Horrors": {
+			"Weight": 1,
+			"Description": "everytime it is opened, roll a limb or feature, being wings, legs, arms, hand, face or face features, tail, and then roll to see how it is changed!"
+		},
+		"Charged Staff of Yoli": {
+			"Weight": 1,
+			"Description": "Either causes healing, vomiting, polymorph, baleful polymorph, revive, death, fireball, or water gun"
+		},
+		"Royal Jelly": {
+			"Weight": 1,
+			"Description": "Fully heals up to multiple times, but amount consumed is relative to the chance of getting a condition: Bee'd, Dwemmer infested, Spider Touched, Facehugged, or develop traits of a creature that attacked them"
+		},
+		"Blind Bluff": {
+			"Weight": 1,
+			"Description": "Headband renders person blind, but grants the ability to make magical statements to hearer, effecting them, can accidentially trigger"
+		},
+		"Necklace of the Deal": {
+			"Weight": 1,
+			"Description": "Let's the wearer make deals with it"
+		},
+		"Bracelet of the Monster": {
+			"Weight": 1,
+			"Description": "Gives the wearer power gradually, but they become a monster"
+		},
+		"Chalice": {
+			"Weight": 1,
+			"Description": "Brings you to a throne instantly, and forces you to sit in it"
+		},
+		"Training Scroll": {
+			"Weight": 1,
+			"Description": "Teaches you one fighting style, but your body might alter to meet the requirements, lose the ability to hold things with hands"
+		},
+		"Cursed Feather Duster": {
+			"Weight": 1,
+			"Description": "Basically propagates the maid curse, only it's transformation is much more slow than its more potent cousin"
+		},
+		"Hubert's Box": {
+			"Weight": 1,
+			"Description": "Activate to fuse items with you!"
+		},
+		"Wooden Spider Spoon": {
+			"Weight": 1
+		},
+		"Rosebud": {
+			"Weight": 1,
+			"Description": "Genderswap, that's it"
+		},
+		"Cultist Dagger": {
+			"Weight": 1,
+			"Description": "Lethal attacks with it, Can't let go, moves on it's own"
+		},
+		"Neko's Ears": {
+			"Weight": 1,
+			"Description": "Nya~"
+		},
+		"Lost Journal": {
+			"Weight": 1,
+			"Description": "Once you have read some, you will meet the same fate as the old owner"
+		},
+		"Cool Sunglasses": {
+			"Weight": 1,
+			"Description": "You can only roll 1's and 20's"
+		},
+		"The Perfect Record": {
+			"Weight": 1,
+			"Description": "Every roll passed grands situational benefits, every fail removes 10 gold, if you can't pay, the item disappears and you suffer 3 curses, all with saving throws"
+		},
+		"Poker Chip": {
+			"Weight": 1,
+			"Description": "Use before entering a new room, contents of room are doubled, impossible to tell what is in the room before hand"
+		},
+		"Belt of Feeding": {
+			"Weight": 1,
+			"Description": "Wearer never needs to eat, if knocked to fading, death is immediate"
+		},
+		"Fake Horns": {
+			"Weight": 1,
+			"Description": "People believe you are a real devil"
+		},
+		"Wooden Keepsake Box": {
+			"Weight": 1,
+			"Description": "Contains either a severed tongue, finger, toe, eye, or ear, on seeing content of the box, viewer's limb alters to another creature's, witnessed creatures take priority"
+		},
+		"Love Letter": {
+			"Weight": 1,
+			"Description": "Once read, a secret admirer will hunt you down"
+		},
+		"Danger Locket": {
+			"Weight": 1,
+			"Description": "Lower rolls that pass are better, -4 to rolls"
+		},
+		"Lytri Leash": {
+			"Weight": 1,
+			"Description": "Wearer can't remove leash, Leash has remote to control wearer's phase, no matter if they are a Lytri or not"
+		},
+		"Crawler Bracers": {
+			"Weight": 1,
+			"Description": "Makes the wearer harder to see, but roll 3, on 1 lose legs, 2 and 3 up to the gm"
+		},
+		"Tattoo Kit": {
+			"Weight": 1,
+			"Description": "On use, gives a Mark"
+		},
+		"A banana filled with spiders": {
+			"Weight": 1
+		},
+		"Cursed Dragon's Blood": {
+			"Weight": 1,
+			"Description": "Every option has a downside, larger amount of bad stuff can happen"
+		},
+		"Drool Collar": {
+			"Weight": 1,
+			"Description": "Occasional inability to do Intelligence actions, doesn't effect intelligence itself"
+		},
+		"Amulet of Word": {
+			"Weight": 1,
+			"Description": "Listens to any spoken language when off cooldown and empowers the wearer's body with it, recharges eventually through rest or meeting people"
+		},
+		"Amulet of Totem": {
+			"Weight": 1,
+			"Description": "Comes with 3 Totem themed Tokens, one token can be slotted into it at a time, grants the abilities and downsides of the animal or aspect of the token, when entering an enemy or boss room there is a 25% chance it will be rerolled into another room and you will gain a Totem related to the rerolled enemy, always gain 1 token from actual totem rooms, oldest token turns to ash when this happens, there always needs to be a token slotted in"
+		},
+		"Faction Standard": {
+			"Weight": 1,
+			"Description": "A banner featuring the size, make, and insignia of a Faction, tries to forcibly align the looter to the Faction and make them more fitting for it, applicable factions are: The Dungeon Delvers, The Library, the Pit, The Ooze, The Spider Brood, The Fiend's Frontier, The Eldritch Incursion, Nature's Fury, Revenge from the Deep, the Gnoll Warband, The Kobold Tribe, and a random Dungeon Settlement"
+		},
+		"Liquid Elementalium": {
+			"Weight": 1,
+			"Description": "A vial of fluid that tries its hardest to fuse with the first thing it encounters, turns fused thing into a random elemental that is subject to elemental influence"
+		}
+	},
+
+	"Bosses": {
+		"Gorilla Mushroom": {
+			"Weight": 1
+		},
+		"Queen Spider": {
+			"Weight": 1
+		},
+		"Lurker": {
+			"Weight": 1
+		},
+		"Some kind of eldritch horror": {
+			"Weight": 1
+		},
+		"Mass Ball of Limbs": {
+			"Weight": 1
+		},
+		"Malfunctioning Hullen": {
+			"Weight": 1
+		},
+		"Ceiling Monger": {
+			"Weight": 1
+		},
+		"Hooked Monster": {
+			"Weight": 1,
+			"Description": "A creature that is the shape of a drider, but all their limbs end in horrible hooks, and their carapace is Red with blood"
+		},
+		"Rust Demon": {
+			"Weight": 1
+		},
+		"Bleeding Taurus": {
+			"Weight": 1,
+			"Description": "Always enraged demon bull"
+		},
+		"Effigy of Greed": {
+			"Weight": 1
+		},
+		"Dragon": {
+			"Weight": 1
+		},
+		"Harmonized Crystal": {
+			"Weight": 1
+		},
+		"Xenomorph": {
+			"Weight": 1,
+			"Description": "Queen if you want your player dead"
+		},
+		"Effigy of Torture": {
+			"Weight": 1,
+			"Description": "Large 'humanoid' with a cage for a head, limbs horribly mangled but held together by twisted rusted metal, the beast moans in pain"
+		},
+		"Mad Scientist": {
+			"Weight": 1
+		},
+		"Face Collector": {
+			"Weight": 1,
+			"Description": "If you fall in battle, death is avoided, but your face is no longer your own"
+		},
+		"Bag Of Sick": {
+			"Weight": 1,
+			"Description": "A large leather sack that rolls around, puking out bile and disease",
+			"LinkedRollTables": ["Airborne Diseases"]
+		},
+		"Tongue Stealer": {
+			"Weight": 1,
+			"Description": "If you fall in battle, death is avoided, but your voice and tongue get stolen"
+		},
+		"Glitch": {
+			"Weight": 1,
+			"Description": "DO NOT TOUCH, ANYTHING COULD GO WRONG"
+		},
+		"Cerberus": {
+			"Weight": 1
+		},
+		"Bad Vibe": {
+			"Weight": 1,
+			"Description": "Not an enemy, but entering this room will cause something bad, 1"
+		},
+		"Iron Carp": {
+			"Weight": 1,
+			"Description": "Carp Humanoid Robot the size of a Golem, tongue is a chain with a cuff at the end that launches out to shackle"
+		},
+		"Weeper": {
+			"Weight": 1
+		},
+		"Hateful Tree": {
+			"Weight": 1
+		},
+		"Greater Poxer": {
+			"Weight": 1
+		},
+		"Demonic Painter": {
+			"Weight": 1,
+			"Description": "Not Hostile, but will insist on you allowing them to paint you, don't, this will alter identity to minor details, to other details like having only one cyclops eye or a frog tongue, or major things like a complete identity change"
+		},
+		"Ale Hornet": {
+			"Weight": 1
+		},
+		"Obelisk": {
+			"Weight": 1
+		},
+		"Queen Snake": {
+			"Weight": 1
+		},
+		"Aspect of Lethargy": {
+			"Weight": 1
+		},
+		"Intellect Sapper": {
+			"Weight": 1,
+			"Description": "No physical attacks, but will steal intelligence and knowledge every round"
+		},
+		"Beholder": {
+			"Weight": 1
+		},
+		"Swarm of Locust": {
+			"Weight": 1
+		},
+		"Ant Queen": {
+			"Weight": 1
+		},
+		"Visage Devourer": {
+			"Weight": 1,
+			"Description": "Leech thing bigger then a head, attempt to attach to one's head and swallow it, if this does this, it takes over the body"
+		},
+		"Lycanthrope": {
+			"Weight": 1
+		},
+		"Aspect of Ruin": {
+			"Weight": 1
+		},
+		"Sharp Mass": {
+			"Weight": 1,
+			"Description": "Blob of oozing mud slime filled with sharp bladed weapons, and the occasional crossbow"
+		},
+		"Alchemical Horror": {
+			"Weight": 1,
+			"Description": "Humanoid mutated to constantly produce a contagious potion, jaw is peeled open to be like an insects mandibles, maw oozing out the chemical, and flesh not too unlike that of a drinker"
+		},
+		"Lord of Bones": {
+			"Weight": 1,
+			"Description": "Skeleton King with greatsword, pretty much"
+		},
+		"Vhaaxo": {
+			"Weight": 1,
+			"Description": "Black snake with crow wings from their back, Chaos Eldritch God"
+		},
+		"Spine Wraith": {
+			"Weight": 1,
+			"Description": "Creature with tentacles that are spines that still drop with blood, and a head that looks like a bloated human face that lacks a mouth, nose, or ears, tries to rip off heads and replace them"
+		},
+		"Scourge": {
+			"Weight": 1
+		},
+		"Bloodsucker Broodmother": {
+			"Weight": 1
+		},
+		"Locust Lord": {
+			"Weight": 1
+		},
+		"Clockwork Fabicator": {
+			"Weight": 1
+		},
+		"Bag of Life Holding": {
+			"Weight": 1,
+			"Description": "A backpack that is alive, that contains trapped creatures as 'pets'"
+		},
+		"Mirrored Horror": {
+			"Weight": 1,
+			"Description": "The PC, but malformed"
+		},
+		"Venus Man Trap": {
+			"Weight": 1
+		},
+		"Witness Lord": {
+			"Weight": 1,
+			"Description": "Giant Veiny Eyeball that is basically the grand dad of Observers, people being watched will experience paranoia, the passage of time passing faster, inability to cast magic, and in extreme cases, becoming an observer"
+		},
+		"Iron Husk": {
+			"Weight": 1,
+			"Description": "A humanoid body of warped tortured flesh, with their head and neck as a large ball and chain"
+		},
+		"Krakenling": {
+			"Weight": 1,
+			"Description": "Like a Kraken, but not nearly as massive"
+		},
+		"Gorgon": {
+			"Weight": 1,
+			"Description": "Metal Bull with Petrifying gas breath"
+		},
+		"Chimera": {
+			"Weight": 1,
+			"Description": "3 Heads, from left to right, Goat, Lion, Dragon"
+		},
+		"Owlbear": {
+			"Weight": 1
+		},
+		"Vengeful Shape": {
+			"Weight": 1,
+			"Description": "A ghost using nearby material to form a rickety body, if it defeats the player or 20 turns pass it abandons it's false body and tries to make itself home within the player, bringing with it it's vengeance"
+		},
+		"Cloaker": {
+			"Weight": 1
+		},
+		"Otyugh": {
+			"Weight": 1
+		},
+		"Elemental": {
+			"Weight": 1
+		},
+		"Mind Render": {
+			"Weight": 1,
+			"Description": "the face collector of memories, trades or steals pieces of memory, personality, or knowledge to a reality warping extent"
+		},
+		"Video Game Monster of choice": {
+			"Weight": 1
+		},
+		"Eye Stealer": {
+			"Weight": 1,
+			"Description": "long lanky Eldritch horror with claws, and a wad of eyeballs for a head"
+		},
+		"The Smoldering One": {
+			"Weight": 1,
+			"Description": "a giant burning purple wisp, enveloping a suit of armor"
+		},
+		"Drider Warmaiden": {
+			"Weight": 1,
+			"Description": "usually accompanied by fleshwarped allies"
+		},
+		"The Unshaper": {
+			"Weight": 1,
+			"Description": "Radioactive Reptile with a leech head and 6 arms for legs"
+		},
+		"Lucid Dreamling": {
+			"Weight": 1,
+			"Description": "Warps reality with its presence, looks like a sleepwalking satyr with 2 crocodile tails and 4 reptilian legs, blue of course"
+		},
+		"Chromeling": {
+			"Weight": 1,
+			"Description": "Large metallic-looking beetle that infects a special form of clockwork virus that causes colorblindness, emotion nullification, stiffness, and becoming a chromeling if let to get severe"
+		},
+		"Desire Mirage": {
+			"Weight": 1,
+			"Description": "entity that uses your own desires to get you"
+		},
+		"Drem the Breaker": {
+			"Weight": 1,
+			"Description": "Red Troll with intelligence"
+		}
+	},
+
+	"Drugs": {
+		"Amnesiac Brew": {
+			"Weight": 1,
+			"Description": "You forget things, leaves a 'pleasant' numb feeling"
+		},
+		"Spice": {
+			"Weight": 1,
+			"Description": "+4 to physical combat and trap rolls, very addictive, every use has worse and worse side effects"
+		},
+		"Mutagen": {
+			"Weight": 1,
+			"Description": "Mutates you, addictive"
+		},
+		"Scoomi": {
+			"Weight": 1,
+			"Description": "Mushroom Cocktail, makes you see things, feel great, might or might not infect you with mushroom spores"
+		},
+		"FeyRoot": {
+			"Weight": 1,
+			"Description": "Makes you vulnerable to suggestion, but feel unbeatable, ironically toxic to Fey"
+		},
+		"Niknip": {
+			"Weight": 1,
+			"Description": "Nya!"
+		},
+		"Tividal": {
+			"Weight": 1,
+			"Description": "Makes you feel very calmed, VERY addictive, overuse leads to mental speed getting severely reduced, the body becoming clumsy and thick, development of reptile traits like scales and claws, and a loss of morals, ends with victim becoming a lizardperson, Reptiles are unaffected"
+		},
+		"Kuukuu": {
+			"Weight": 1,
+			"Description": "Makes you repeat everything you hear, and very lazy, but feel great, overuse turns you into a kenku, Kenku have great effects with it"
+		},
+		"Aqua": {
+			"Weight": 1,
+			"Description": "Resistant to mind effects, and calming, overdose causes drowning, addiction causes dryness, both causes permanent waterbreathing, no air"
+		},
+		"Eye Eerie": {
+			"Weight": 1,
+			"Description": "Your attacks deal alot more damage, you take more damage, overuse causes loss of empathy and morals, and allergies with any food not meat"
+		},
+		"Moon Hypo": {
+			"Weight": 1,
+			"Description": "For Lytri, immediately enter either full moon or new moon form, for others, permanently enter a random phase, and develop traits of a creature"
+		},
+		"Chronos": {
+			"Weight": 1,
+			"Description": "Stop time for brief moments at point of consumption, tastes horrible, can cause Teleglow or time dilation"
+		}
+	},
+
+	"Themes": {
+		"Slime": {
+			"Weight": 1
+		},
+		"Cursed": {
+			"Weight": 1
+		},
+		"Flooded": {
+			"Weight": 1
+		},
+		"Filthy": {
+			"Weight": 1
+		},
+		"Webbed": {
+			"Weight": 1
+		},
+		"Garden": {
+			"Weight": 1
+		},
+		"Primal": {
+			"Weight": 1
+		},
+		"Fungus": {
+			"Weight": 1
+		},
+		"Enchanted": {
+			"Weight": 1
+		},
+		"Mirrored": {
+			"Weight": 1
+		},
+		"Fogged": {
+			"Weight": 1
+		},
+		"Temple": {
+			"Weight": 1
+		},
+		"Gallery": {
+			"Weight": 1
+		},
+		"Rad": {
+			"Weight": 1
+		},
+		"Prison": {
+			"Weight": 1
+		},
+		"Hellish": {
+			"Weight": 1
+		},
+		"Treasury": {
+			"Weight": 1
+		},
+		"Ethereal": {
+			"Weight": 1
+		},
+		"RotRain": {
+			"Weight": 1
+		},
+		"Frozen": {
+			"Weight": 1
+		},
+		"Standard": {
+			"Weight": 1
+		},
+		"Rift": {
+			"Weight": 1
+		},
+		"Holy": {
+			"Weight": 1
+		},
+		"Sewer": {
+			"Weight": 1
+		},
+		"Modern": {
+			"Weight": 1
+		}
+	},
+
+	"Traders": {
+		"Neko's Cursed Goods": {
+			"Weight": 1,
+			"Description": "Offers free cursed goods, and the customization of said goods for a price"
+		},
+		"Septum's Hunt": {
+			"Weight": 1,
+			"Description": "Offers equipment made of leather, bone, and tribal materials, also offers natural curatives, poisons, and talismans"
+		},
+		"Spider Mound": {
+			"Weight": 1,
+			"Description": "Accepts corpses or trophies and gives back money or extra loot, depending on the offering"
+		},
+		"Thed's Theater": {
+			"Weight": 1,
+			"Description": "Medical Expertise of the mundane sort"
+		},
+		"Crazy Pete's Crazy Potions!": {
+			"Weight": 1,
+			"Description": "Sells potions, most of their potions have a side effect"
+		},
+		"Gusi's Dubious Discounts!": {
+			"Weight": 1,
+			"Description": "Shifty Individual selling stolen wears and junk at full price, discounts thieves and scumbags"
+		},
+		"Darwin's Metal": {
+			"Weight": 1,
+			"Description": "Blacksmith Dwarf"
+		},
+		"Uncle's Trinkets": {
+			"Weight": 1,
+			"Description": "Jeweler Elf"
+		},
+		"Testiment's Bookstore": {
+			"Weight": 1,
+			"Description": "Bookstore Snakes"
+		},
+		"Renovations": {
+			"Weight": 1,
+			"Description": "Offers control over what the next room is, for a price"
+		},
+		"Lady Whisper's Blessings": {
+			"Weight": 1,
+			"Description": "Holy Services from their divine fountain"
+		},
+		"Trot the Lootbox Raptor": {
+			"Weight": 1,
+			"Description": "Buy a lootbox, higher price means better odds"
+		},
+		"Torin the Beastmaster": {
+			"Weight": 1,
+			"Description": "Sells and buys beasts, and the gear related to them"
+		},
+		"Sphinx of Mettle": {
+			"Weight": 1,
+			"Description": "Quizes the Adventurer, rewards cunning and wisdom"
+		},
+		"Persistent Spirit": {
+			"Weight": 1,
+			"Description": "Offers services that persist between characters"
+		},
+		"Rivolo the Experimenter": {
+			"Weight": 1,
+			"Description": "Scientific mechrat that offers mild medical assistance, or experiments"
+		},
+		"Widmer the Wish Twisting Genie": {
+			"Weight": 1,
+			"Description": "Offers a wish, will twist it, if the adventurer is cautious they will instead offer magic services"
+		}
+	},
+
+	"Objects": {
+		"Fountain": {
+			"Weight": 1,
+			"Description": "Heals"
+		},
+		"Throne": {
+			"Weight": 2,
+			"Description": "Form Change, user can choose to change to it"
+		},
+		"Supplies": {
+			"Weight": 1,
+			"Description": "Food, camping stuff, might have a rare item"
+		},
+		"Idol": {
+			"Weight": 2,
+			"Description": "Curse, with benefits",
+			"LinkedRollTables": ["Curses"]
+		},
+		"Barrel Keg": {
+			"Weight": 2,
+			"Description": "Random Liquid",
+			"LinkedRollTables": ["Reagents"]
+		},
+		"Lab equipment": {
+			"Weight": 1,
+			"Description": "Has a Enchanter, Injector, and Forger"
+		},
+		"Safe Room": {
+			"Weight": 2,
+			"Description": "Contains supplies, absolutely safe from the outside, 25% chance to have a friendly or neutral npc"
+		},
+		"Study": {
+			"Weight": 2,
+			"Description": "Forbidden Knowledge"
+		},
+		"Odd Machine": {
+			"Weight": 1,
+			"Description": "Randomizes species, user must make mental saving throw"
+		},
+		"Crystal Thing": {
+			"Weight": 2,
+			"Description": "From Soul Foci, to other oddities"
+		},
+		"Tomb": {
+			"Weight": 2,
+			"Description": "1. Curse, 2. Undead. 3. Loot"
+		},
+		"Forgotten Feast": {
+			"Weight": 2,
+			"Description": "Either full heal and vitality boost, or disease",
+			"LinkedRollTables": ["Diseases"]
+		},
+		"Armor/Weapon Rack": {
+			"Weight": 2,
+			"Description": "A selection of weapons and/or weapons, if neither of these are applicable to your species, encounter a Beast Tailor"
+		},
+		"Oath Font": {
+			"Weight": 1,
+			"Description": "Make an oath to a specific word or concept, receive a mixed curse and blessing"
+		},
+		"Secret Hatch": {
+			"Weight": 1,
+			"Description": "Secret room containing anything the GM wants"
+		},
+		"Purity Slab": {
+			"Weight": 1,
+			"Description": "Removes enchantments put on it, removes curses and diseases"
+		},
+		"Magic Well": {
+			"Weight": 2,
+			"Description": "Enchants Items and People that touch the water, not always good enchantments"
+		},
+		"Pay Toll": {
+			"Weight": 3,
+			"Description": "Pay money to change the room theme, or encounter a Faction"
+		}
+	},
+
+	"Curses": {
+		"WIP": {
+			"Weight": 1,
+			"Description": "I don't know how to do tradeoffs and whatnot :)"
+		}
+	},
+
+	"Paintings": {
+		"Painting of the Ocean": {
+			"Weight": 1
+		},
+		"Painting of a Silver Dragon": {
+			"Weight": 1
+		},
+		"Drawing of a Tea Cup": {
+			"Weight": 1
+		},
+		"Kobold Tribal Etchings": {
+			"Weight": 1
+		},
+		"Artfully Spun Spiderweb": {
+			"Weight": 1
+		},
+		"Painting of Kobold Child and Dog Playing": {
+			"Weight": 1
+		},
+		"A Ham Sandwich nailed to the wall": {
+			"Weight": 1
+		},
+		"Drawing of a Dungeon Raptor": {
+			"Weight": 1
+		},
+		"Painting of an Evil, Grinning Dragon": {
+			"Weight": 1,
+			"Description": "A window to said dragon, viewers who are not Kobolds will find themselves cursed or affected by a specifically-tailored Curse of the Seeker for the Dragon, kobolds are immune"
+		},
+		"Painting of a Screaming Newt": {
+			"Weight": 1,
+			"Description": "All people or creatures will involuntary scream and or produce a similar sound for the duration that the creature holds direct eye contact with the painting"
+		},
+		"Soul Tap": {
+			"Weight": 1,
+			"Description": "When it is blank, looking at it traps one soul in it, and destroys the body, the soul is put to display afterwards in the painting, if someone were to touch the painting, their soul would swap with the one in the painting"
+		},
+		"Painting of a Snake enjoying a Book": {
+			"Weight": 1
+		},
+		"Oozing Painting": {
+			"Weight": 1,
+			"Description": "the room is automatically also Slimed, anyone within a few feet of the painting also gets slimed, and begin to be drawn into the painting, those who enter, join the mass"
+		},
+		"Painting of a bird, but their beak is a horn, you can hear honking from the painting": {
+			"Weight": 1
+		},
+		"Painting of a Large Black Dragon, comforting his child": {
+			"Weight": 1
+		},
+		"A Family Portrait of Neko and their family, every single one of them look like they don't want to be there": {
+			"Weight": 1
+		},
+		"Strange Rune": {
+			"Weight": 1,
+			"Description": "Upon entering or touching the piece, you undergo a long conversion to a demon, or a devil, depends on your actions beforehand"
+		},
+		"Crying Mimic Painting, It is drawn well, but there is an angry stickman on it": {
+			"Weight": 1
+		},
+		"Portrait of the Character": {
+			"Weight": 1,
+			"Description": "On viewing, nothing happens right away, but the next picture they see, if it does not already, will gradually make them more like the picture"
+		},
+		"A Rare Quality Item Painting": {
+			"Weight": 1,
+			"Description": "Touching the painting will have the item manifest, and render the painting blank"
+		},
+		"Pocket Dimension": {
+			"Weight": 1
+		},
+		"Persona Art": {
+			"Weight": 1,
+			"Description": "You don't know who drew this, but it makes you want to gag"
+		},
+		"Painting of a dew-covered daisy": {
+			"Weight": 1
+		},
+		"Sketch of a shadowed figure": {
+			"Weight": 1,
+			"Description": "looking directly at it causes the room's exits to close"
+		},
+		"Kobold Child's Drawing": {
+			"Weight": 1
+		},
+		"Paper with Strange Calligraphy": {
+			"Weight": 1,
+			"Description": "Reading this paper causes you to learn the language the paper is written in, but forget all previous languages"
+		},
+		"A painting of Mother snake showing her fangs": {
+			"Weight": 1
+		},
+		"Dusty Painting": {
+			"Weight": 1,
+			"Description": "Dusting it off reveals an original painting not on this list"
+		},
+		"Cursed Dusty Painting": {
+			"Weight": 1,
+			"Description": "Self Explanatory",
+			"LinkedRollTables": ["Curses"]
+		},
+		"Drawing of a grey mouse": {
+			"Weight": 1,
+			"Description": "The viewer gets an odd urge to clean the dungeon, and tidy things up"
+		},
+		"Painting of a Bloody Heart": {
+			"Weight": 1
+		},
+		"Scribbles from a madman": {
+			"Weight": 1,
+			"Description": "horribly disfigures you, likely will end up a monstrous combination of creatures"
+		},
+		"Painting of a Jade Vase": {
+			"Weight": 1
+		},
+		"Snek": {
+			"Weight": 1,
+			"Description": "Child's drawing of a snake, mild curse on those who see it, as the word \"snake\" is erased from their vocabulary, and replaced with \"snek\""
+		},
+		"Magic Cardboard Cutout": {
+			"Weight": 1,
+			"Description": "Resembles an enemy of any type"
+		},
+		"Painting of a Draconic Demon in a suit, working a desk job": {
+			"Weight": 1
+		},
+		"A painting of a Malachite Dragon, with their son": {
+			"Weight": 1
+		},
+		"A painting of a 2 headed Poxer": {
+			"Weight": 1
+		},
+		"A Painting of a wall safe": {
+			"Weight": 1
+		},
+		"A Bull's-eye": {
+			"Weight": 1
+		},
+		"A painting of a Robotic Worm": {
+			"Weight": 1
+		},
+		"A painting of a Xenomorph Queen": {
+			"Weight": 1
+		},
+		"Painting Mimic": {
+			"Weight": 1
+		},
+		"Painting of a dead Deity": {
+			"Weight": 1
+		},
+		"Forceful Letter": {
+			"Weight": 1,
+			"Description": "Roll a save, on fail, forced to read the entirety of it, and invoke a specific curse",
+			"LinkedRollTables": ["Curses"]
+		},
+		"A painting of the Moon": {
+			"Weight": 1
+		},
+		"The Exit": {
+			"Weight": 1
+		},
+		"Co-op Spawn Painting": {
+			"Weight": 1
+		},
+		"A Painting of a Maid": {
+			"Weight": 1
+		},
+		"A painting of your desires": {
+			"Weight": 1
+		},
+		"Abstract Painting of Various Golems made of Various Materials": {
+			"Weight": 1
+		},
+		"A painting of a Human Scholar educating a bunch of hatchling Snakes with books, the Library Queen is vaguely in the background, and the human appears vaguely snakelike in the wrong ways": {
+			"Weight": 1
+		},
+		"Leather Canvas of Lizardfolk Deeds": {
+			"Weight": 1
+		},
+		"Melty Painting": {
+			"Weight": 1,
+			"Description": "The next time the viewer sees a statue, painting, or reads a book, they gain a tradeoff curse custom made for that subject"
+		},
+		"Couatl Self Portrait": {
+			"Weight": 1,
+			"Description": "Clear all non-curse status effects, gain 10 minutes of full mental clarity"
+		},
+		"Strange Machines Painting": {
+			"Weight": 1,
+			"Description": "Immediately gain rudimentary knowledge of Sci-fi setting stuff, said stuff appears more often"
+		},
+		"Ghoul Blood Art": {
+			"Weight": 1,
+			"Description": "You catch random ghoul fever if you get too close, turning you into a random ghoul type: https://pathfinderwiki"
+		},
+		"A Painting of a Warlock, summoning a Hydra-like Demon": {
+			"Weight": 1
+		},
+		"A Painting of a Water Weird drowning a human adventurer": {
+			"Weight": 1
+		},
+		"Distorted Painting": {
+			"Weight": 1,
+			"Description": "Immediately change room theme, cause a room theme related event, and change 3 random objects, people, or Effects to be related to the room theme"
+		}
+	},
+
+	"Totem Piece": {
+		"Yellow Ant": {
+			"Weight": 1,
+			"Description": "Test of Strength, Lift up a heavy object"
+		},
+		"Yellow Fish": {
+			"Weight": 1,
+			"Description": "Test of Survival, Dodge 3 attacks in a row"
+		},
+		"Yellow Bird": {
+			"Weight": 1,
+			"Description": "Test of Escapism, Escape from 3 encounters"
+		},
+		"Yellow Hawk": {
+			"Weight": 1,
+			"Description": "Test of Escapism, Escape from a boss"
+		},
+		"Yellow Tiger": {
+			"Weight": 1,
+			"Description": "Test of Hunting, Kill 3 Creatures"
+		},
+		"Yellow Hornet": {
+			"Weight": 1,
+			"Description": "Test of Hunting, Kill 3 Humanoids"
+		},
+		"Yellow Shark": {
+			"Weight": 1,
+			"Description": "Test of Hunting, Kill 1 Boss"
+		},
+		"Yellow Raccoon": {
+			"Weight": 1,
+			"Description": "Test of Escapism, Sneak Past 3 Encounters"
+		},
+		"Yellow Parrot": {
+			"Weight": 1,
+			"Description": "Test of Charisma, Talk down one hostile"
+		},
+		"Yellow Monkey": {
+			"Weight": 1,
+			"Description": "Test of Skill, Avoid 3 Traps"
+		},
+		"Yellow Dog": {
+			"Weight": 1,
+			"Description": "Test of Charisma, Make a friend"
+		},
+		"Yellow Cat": {
+			"Weight": 1,
+			"Description": "Test of Charisma, Make an enemy"
+		},
+		"Yellow Dragon": {
+			"Weight": 1,
+			"Description": "Test of Survival, Collect 30 Gold"
+		},
+		"Yellow Moth": {
+			"Weight": 1,
+			"Description": "Test of Knowledge, Learn Something New"
+		},
+		"Yellow Spider": {
+			"Weight": 1,
+			"Description": "Test of Survival, Score 5 Hits"
+		},
+		"Yellow Bunny": {
+			"Weight": 1,
+			"Description": "Test of Luck, Crit or Crit Fail"
+		},
+		"Yellow Lizard": {
+			"Weight": 1,
+			"Description": "Test of Survival, sustain 3 wounds"
+		},
+		"Yellow Chameleon": {
+			"Weight": 1,
+			"Description": "Test of Courage, lose/gain a curse or disease"
+		},
+		"Yellow Snake": {
+			"Weight": 1,
+			"Description": "Test of Charisma, Betray someone"
+		},
+		"Yellow Goat": {
+			"Weight": 1,
+			"Description": "Test of Survival, Overcome 1-2 Room Themes that aren't single room"
+		},
+		"Blue Ant": {
+			"Weight": 1,
+			"Description": "Enemies are doubled, but weaker"
+		},
+		"Blue Fish": {
+			"Weight": 1,
+			"Description": "Global Dodging Chance is increased by 4"
+		},
+		"Blue Bird": {
+			"Weight": 1,
+			"Description": "Damage is globally increased"
+		},
+		"Blue Hawk": {
+			"Weight": 1,
+			"Description": "Accuracy is increased globally by 3"
+		},
+		"Blue Tiger": {
+			"Weight": 1,
+			"Description": "Difficulty Increased"
+		},
+		"Blue Hornet": {
+			"Weight": 1,
+			"Description": "Hostility Increased, Globally"
+		},
+		"Blue Shark": {
+			"Weight": 1,
+			"Description": "Item Drops from chests are swapped, commons to packed, rare to common, packed to rare"
+		},
+		"Blue Raccoon": {
+			"Weight": 1,
+			"Description": "Nothing is hidden, not even yourself"
+		},
+		"Blue Parrot": {
+			"Weight": 1,
+			"Description": "Shop Prices are unbalanced"
+		},
+		"Blue Monkey": {
+			"Weight": 1,
+			"Description": "All chests are trapped, all trap rooms are trapped chests"
+		},
+		"Blue Dog": {
+			"Weight": 1,
+			"Description": "Only Non-Hostiles spawn"
+		},
+		"Blue Cat": {
+			"Weight": 1,
+			"Description": "Only Hostiles spawn"
+		},
+		"Blue Dragon": {
+			"Weight": 1,
+			"Description": "Gold Drops from enemies, chests are empty"
+		},
+		"Blue Moth": {
+			"Weight": 1,
+			"Description": "Common Chests are replaced with Object Rooms, Rare Chests replaced with Statues, Packed Chests replaced with Oath Fonts"
+		},
+		"Blue Spider": {
+			"Weight": 1,
+			"Description": "Status Effects, Bleeding, Poisons, and Venoms are twice as effective"
+		},
+		"Blue Bunny": {
+			"Weight": 1,
+			"Description": "19's are crits"
+		},
+		"Blue Lizard": {
+			"Weight": 1,
+			"Description": "Everything is hardier"
+		},
+		"Blue Chameleon": {
+			"Weight": 1,
+			"Description": "Shapechanged"
+		},
+		"Blue Snake": {
+			"Weight": 1,
+			"Description": "Extra Potent in Combat, Exposed to Hazards"
+		},
+		"Blue Goat": {
+			"Weight": 1,
+			"Description": "Character, Item, and Room Properties flipped"
+		},
+		"White Ant": {
+			"Weight": 1,
+			"Description": "Healing Salve, and Bandages"
+		},
+		"White Fish": {
+			"Weight": 1,
+			"Description": "Favorite Food"
+		},
+		"White Bird": {
+			"Weight": 1,
+			"Description": "Uncurse/Cure"
+		},
+		"White Hawk": {
+			"Weight": 1,
+			"Description": "Bladed Weapon"
+		},
+		"White Tiger": {
+			"Weight": 1,
+			"Description": "Species Fitting Armor"
+		},
+		"White Hornet": {
+			"Weight": 1,
+			"Description": "Throwable Weapon or Projectile"
+		},
+		"White Shark": {
+			"Weight": 1,
+			"Description": "Vial of Liquid"
+		},
+		"White Raccoon": {
+			"Weight": 1,
+			"Description": "5 Rooms of Peace"
+		},
+		"White Parrot": {
+			"Weight": 1,
+			"Description": "Immediate Shop"
+		},
+		"White Monkey": {
+			"Weight": 1,
+			"Description": "Immediate Object Room"
+		},
+		"White Dog": {
+			"Weight": 1,
+			"Description": "Friendship"
+		},
+		"White Cat": {
+			"Weight": 1,
+			"Description": "Settlement"
+		},
+		"White Dragon": {
+			"Weight": 1,
+			"Description": "100 Gold"
+		},
+		"White Moth": {
+			"Weight": 1,
+			"Description": "A Spell"
+		},
+		"White Spider": {
+			"Weight": 1,
+			"Description": "Pick Room Theme"
+		},
+		"White Bunny": {
+			"Weight": 1,
+			"Description": "Free Pass"
+		},
+		"White Lizard": {
+			"Weight": 1,
+			"Description": "Full Heal"
+		},
+		"White Chameleon": {
+			"Weight": 1,
+			"Description": "Optional Shapechange/Alter of Faces for free"
+		},
+		"White Snake": {
+			"Weight": 1,
+			"Description": "Negative Past Crimes/Deeds/Slights Forgotten"
+		},
+		"White Goat": {
+			"Weight": 1,
+			"Description": "Bonus TK"
+		},
+		"Red Ant": {
+			"Weight": 1,
+			"Description": "Become Kobold Sized, Kobolds become half sized"
+		},
+		"Red Fish": {
+			"Weight": 1,
+			"Description": "Lose Alot of Dexterity"
+		},
+		"Red Bird": {
+			"Weight": 1,
+			"Description": "Can't Flee"
+		},
+		"Red Hawk": {
+			"Weight": 1,
+			"Description": "-3 Accuracy"
+		},
+		"Red Tiger": {
+			"Weight": 1,
+			"Description": "Increased Difficulty"
+		},
+		"Red Hornet": {
+			"Weight": 1,
+			"Description": "Enemy Immediately Notices You, More Hostility"
+		},
+		"Red Shark": {
+			"Weight": 1,
+			"Description": "Enemies Follow"
+		},
+		"Red Raccoon": {
+			"Weight": 1,
+			"Description": "Half of your items disappear temporarily"
+		},
+		"Red Parrot": {
+			"Weight": 1,
+			"Description": "Shop Prices are doubled"
+		},
+		"Red Monkey": {
+			"Weight": 1,
+			"Description": "Traps are rolled twice"
+		},
+		"Red Dog": {
+			"Weight": 1,
+			"Description": "Rares are replaced with commons, this includes packed chests"
+		},
+		"Red Cat": {
+			"Weight": 1,
+			"Description": "Take more damage"
+		},
+		"Red Dragon": {
+			"Weight": 1,
+			"Description": "Lose ability to use gold, can't pick up gold"
+		},
+		"Red Moth": {
+			"Weight": 1,
+			"Description": "Unable to cast spells"
+		},
+		"Red Spider": {
+			"Weight": 1,
+			"Description": "Enemies are doubled"
+		},
+		"Red Bunny": {
+			"Weight": 1,
+			"Description": "All Rolls are reduced by 2"
+		},
+		"Red Lizard": {
+			"Weight": 1,
+			"Description": "-3 to Dodging"
+		},
+		"Red Chameleon": {
+			"Weight": 1,
+			"Description": "Random Affliction/Negative Polymorph"
+		},
+		"Red Snake": {
+			"Weight": 1,
+			"Description": "Companion who is barely useful/Bad Influence, bound for the duration of the Totem"
+		},
+		"Red Goat": {
+			"Weight": 1,
+			"Description": "Actions have Consequences, the worse the action, the worse the consequence"
+		},
+		"Green Ant": {
+			"Weight": 1,
+			"Description": "For the Next 5 Rooms, all attack hit chances are increased determined by how much bigger your target then you"
+		},
+		"Green Fish": {
+			"Weight": 1,
+			"Description": "Gain breathlessness for 20 Rooms"
+		},
+		"Green Bird": {
+			"Weight": 1,
+			"Description": "One Free Escape in the next 20 Rooms"
+		},
+		"Green Hawk": {
+			"Weight": 1,
+			"Description": "Levitation for 10 Rooms"
+		},
+		"Green Tiger": {
+			"Weight": 1,
+			"Description": "Difficulty Lowered for the next 10 rooms"
+		},
+		"Green Hornet": {
+			"Weight": 1,
+			"Description": "Random Weapon Gained"
+		},
+		"Green Shark": {
+			"Weight": 1,
+			"Description": "Gain a Flask with a random liquid"
+		},
+		"Green Raccoon": {
+			"Weight": 1,
+			"Description": "Past Hostilities Forgotten"
+		},
+		"Green Parrot": {
+			"Weight": 1,
+			"Description": "Next Trader gives free item"
+		},
+		"Green Monkey": {
+			"Weight": 1,
+			"Description": "Next 3 Traps don't activate"
+		},
+		"Green Dog": {
+			"Weight": 1,
+			"Description": "Next hostile creature is passive"
+		},
+		"Green Cat": {
+			"Weight": 1,
+			"Description": "Next Nap/Sleep is undisturbed, and heals fully"
+		},
+		"Green Dragon": {
+			"Weight": 1,
+			"Description": "20 Gold"
+		},
+		"Green Moth": {
+			"Weight": 1,
+			"Description": "3 Scrolls"
+		},
+		"Green Spider": {
+			"Weight": 1,
+			"Description": "Remove Current Room Theme, if room theme is normal, gives 10 gold"
+		},
+		"Green Bunny": {
+			"Weight": 1,
+			"Description": "Next room roll is rolled twice"
+		},
+		"Green Lizard": {
+			"Weight": 1,
+			"Description": "Next Hit is ignored"
+		},
+		"Green Chameleon": {
+			"Weight": 1,
+			"Description": "Optional Tradeoff Curse/Polymorph/Disease"
+		},
+		"Green Snake": {
+			"Weight": 1,
+			"Description": "Anonymity"
+		},
+		"Green Goat": {
+			"Weight": 1,
+			"Description": "Camping Supplies"
+		}
+	},
+
+	"Airborne Diseases": {
+		"Gunk Lung": {
+			"Weight": 1,
+			"Description": "Victim hacks and coughs large amounts of a sticky, blue mucous frequently, which may take up your turn while in battle"
+		},
+		"The Dwarven Shakes": {
+			"Weight": 1,
+			"Description": "Hands become numb, and stiff, and shake violently"
+		},
+		"The Common Cold": {
+			"Weight": 1
+		},
+		"Gurgle Sickness": {
+			"Weight": 1,
+			"Description": "Victim is unable to speak or eat regularly, as the disease fills the mouth, looking like a black tar, and locking the victim's jaw open"
+		},
+		"Black Death": {
+			"Weight": 1,
+			"Description": "Victim's flesh slowly rots away"
+		},
+		"Brain Rot": {
+			"Weight": 1,
+			"Description": "Victim's brain deteriorates in stages, first random brief confusion, then then -3 to resisting mental ailments, then lastly they roll 2d4, effects stack: 1"
+		},
+		"Dog's Disease": {
+			"Weight": 1,
+			"Description": "Those infected drool constantly, appear far more energetic, and have a drastically reduced attention span"
+		},
+		"Lich Breath": {
+			"Weight": 1,
+			"Description": "Your breath fills the room with the smell of rotting flesh, and if left unattended, you become undead, and the disease can no longer be cured through normal means"
+		},
+		"Hunter's Bane": {
+			"Weight": 1,
+			"Description": "Complete hair loss, colorblindness, and increased eye color vibrancy, eventually leads to poor hand-eye coordination and movement"
+		},
+		"Screamer's Sickness": {
+			"Weight": 1,
+			"Description": "Causes you to uncontrollably wail, and hide in dark places"
+		},
+		"Rabies": {
+			"Weight": 1,
+			"Description": "Self Explanatory"
+		},
+		"Hungers": {
+			"Weight": 1,
+			"Description": "Victim craves food, and never gets full"
+		},
+		"Clown's Disease": {
+			"Weight": 1,
+			"Description": "a painful disease that causes damage to the lungs and brain, and forces infected to periodically tell bad jokes during dialogue"
+		},
+		"Clockwork Sickness": {
+			"Weight": 1,
+			"Description": "Infected are slowly turned into a machine, must flip a coin if this end games or not"
+		},
+		"Disphoria": {
+			"Weight": 1,
+			"Description": "Infected experience hallucination in earlier stages, that can range from minor to extreme, in later stages these hallucinations become real"
+		},
+		"Hive Craze": {
+			"Weight": 1,
+			"Description": "Infected slowly begin to lose their sense of individuality, becoming more depending on others to give them orders, eventually in the last stage, they stop thinking on their own, and a person could order them to do things from basic to the absurd, from growing wings, to stopping their heart"
+		},
+		"Ceiling Monger Infection": {
+			"Weight": 1,
+			"Description": "Halved Stamina in earlier stages, followed by paling skin, and twitching, in later stages victim doesn't breath, as their lungs are infested with Ceiling Mongers, Monger tentacles can come out of mouth to attack, supplying food, victim experiences nightmares in earlier stages, but loses the ability to sleep in later stages, in the last stage the monger tentacles are permanently hanging out of the victim's mouth, victim suffers muscle slowness, and blindness, as well has the inability to speak, cognition numbed"
+		},
+		"Suffering Sickness": {
+			"Weight": 1,
+			"Description": "Victims feel lightheaded and weak in early stages, eventually, victims won't be able to use their legs, and be forced to crawl, if the disease is not cured, the legs will rot away painfully, but not lethally"
+		},
+		"Mute Flu": {
+			"Weight": 1,
+			"Description": "Victim, gradually, will have their volume of voice dwindle away, till they are mute, in much later stages, victim can no make any noise by any means, be it direct or indirect, but also lose their hearing"
+		},
+		"Cobber's Pox -Victim will cough up webs occasionally, feel crawling inside, even with no bugs present, in later stages victim is classified as both Humanoid and Beast": {
+			"Weight": 1,
+			"Description": "Spider"
+		}
+	},
+
+	"Waterborne Diseases": {
+		"Swamp Fever": {
+			"Weight": 1,
+			"Description": "Aches and chills"
+		},
+		"Fish Sickness": {
+			"Weight": 1,
+			"Description": "Victim's skin produces thick, slimy mucous, and stinks terribly"
+		},
+		"Swamp Tongue": {
+			"Weight": 1,
+			"Description": "Victim's tongue grows to the size of a large snake, coated in a vile, green liquid that carries the disease"
+		},
+		"Water Flu": {
+			"Weight": 1,
+			"Description": "Victim becomes extremely sickened, and coughs up quantities of water every now and again"
+		},
+		"Gill Syndrome": {
+			"Weight": 1,
+			"Description": "Victim grows gills, and gains sharp, aquatic teeth"
+		},
+		"Speakus Swampus": {
+			"Weight": 1,
+			"Description": "Infected gains the ability to speak, and understand the language of swamp reptiles, but is unable to speak or understand anything else"
+		},
+		"Stubborn Syndrome": {
+			"Weight": 1,
+			"Description": "Victim experiences worsening weakness to curses, this disease has a chance to resist efforts to cure it"
+		},
+		"ScaleRot": {
+			"Weight": 1,
+			"Description": "You slowly, and painfully grow scales that replace your skin, become hermit-like, and gain reptilian eyes that are very sensitive to light"
+		},
+		"Wasting Sickness": {
+			"Weight": 1,
+			"Description": "Victim consumes food at an accelerated rate, and can die from not eating"
+		},
+		"Boiling Point": {
+			"Weight": 1,
+			"Description": "Starts with fever, ends with hair combusting, eyes melting, and death, followed by flesh boiling"
+		},
+		"Maniamorphic": {
+			"Weight": 1,
+			"Description": "Infected slowly get more and more obsessed with something, if they are allowed to indulge they get altered in mind and body, this can be either an inanimate object, a living thing, a concept, anything"
+		},
+		"Destructure": {
+			"Weight": 1,
+			"Description": "Starts with bone pains, then teeth liquifying, eventually bones liquify, incompatable with Malaria Genesis"
+		},
+		"Malaria Genesis": {
+			"Weight": 1,
+			"Description": "Victims in early stages start to develop a short attention span, reduced body weight, and reduced intelligence, in later stages the mentioned symptoms get worse, and their mouth turns into a mosquito proboscis, and can only feed by drinking blood or Sugars (determined by gender), indulging in this new diet worsens the victims condition, increasing the early stage symptoms, and they develop more bug-like, along with gradual shrinking until the disease becomes uncurable, and the victim becomes a Bloodsucker or Jukefly (Determined by gender), fasting cures the disease gradually"
+		},
+		"Slowing Sickness": {
+			"Weight": 1,
+			"Description": "Victim feels slightly slower at first, skin then starts to produce a slime, before victim's eyes roll out and become snail eyes, and they move, and speak, slower, early stages can be cured with salt, but in later stages salt hurts"
+		},
+		"Shivers": {
+			"Weight": 1,
+			"Description": "Victim feels chilly, when disease is in full swing, victim will, no matter what, feel too cold, victim is not harmed by the cold, but high heat is lethal"
+		},
+		"Lumansis": {
+			"Weight": 1,
+			"Description": "Victim is attracted to bright lights, shiny things, and magic energies, in later stages, victim can't see unless near bright light"
+		},
+		"Lock Joint": {
+			"Weight": 1,
+			"Description": "Victim's joints ache in early stages, in later stages victim has a 1/7 chance to fail rolls that require movement"
+		},
+		"Berduup": {
+			"Weight": 1,
+			"Description": "Victim will feel strange tingling in their arms, in later stages, arms become  uncontrollable and useless"
+		},
+		"Cement Blood": {
+			"Weight": 1,
+			"Description": "Victim feels a bit cold at first, but overtime Victim's body loses ability to produce its own heat, Metabolism slows, but the colder it is, the slower they move and think"
+		}
+	},
+
+	"Diseases": {
+		"Airborne": {
+			"Weight": 1,
+			"Description": "Diseases that are spread through the air",
+			"LinkedRollTables": ["Airborne Diseases"]
+		},
+		"Waterborne": {
+			"Weight": 1,
+			"Description": "Diseases that are spread through water",
+			"LinkedRollTables": ["Waterborne Diseases"]
+		}
+	},
+
+	"Altars": {
+		"Altar of Faces": {},
+		"Altar of Regret": {},
+		"Altar of Time": {},
+		"Altar of Friendship": {},
+		"Altar of Beginnings": {},
+		"Altar of Fates": {},
+		"Altar of Fortuna": {},
+		"Altar of Chaos": {},
+		"Altar of Origin": {},
+		"Altar of Wisdom": {}
+	},
+
+	"Reagents": {
+		"Healing Potion": {
+			"Weight": 1,
+			"Description": "Heals"
+		},
+		"Ale": {
+			"Weight": 1,
+			"Description": "Gets Drunk, unless dwarf, then does not effect you"
+		},
+		"Venom": {
+			"Weight": 1,
+			"Description": "random thing, either damage over time, condition, or worse"
+		},
+		"Poison": {
+			"Weight": 1,
+			"Description": "Debuff"
+		},
+		"Polymorphine": {
+			"Weight": 1,
+			"Description": "Polymorph, 1 Lt = 1 hour"
+		},
+		"Chaotic Polymorphine": {
+			"Weight": 1,
+			"Description": "Chaotic Polymorph, 1 LT = 1 hour"
+		},
+		"Dwarven Ale": {
+			"Weight": 1,
+			"Description": "Can get dwarves drunk, utterly smashes everyone else"
+		},
+		"Alchemic Solution": {
+			"Weight": 1,
+			"Description": "Turns stuff to gold"
+		},
+		"Water": {
+			"Weight": 1,
+			"Description": "Refreshing, depending if it is clean"
+		},
+		"Anti-Venom": {
+			"Weight": 1,
+			"Description": "Curse poison and venom"
+		},
+		"Alchemic Fire": {
+			"Weight": 1,
+			"Description": "Combusts"
+		},
+		"Salve": {
+			"Weight": 1,
+			"Description": "Eases pain, helps healing"
+		},
+		"Honey": {
+			"Weight": 1,
+			"Description": "Sweet, doesn't go bad, can be used for healing"
+		},
+		"SpiritVessel": {
+			"Weight": 1,
+			"Description": "Causes consumer to enter a state of battle trance"
+		},
+		"Some Kind of Drug": {
+			"Weight": 6,
+			"LinkedRollTables": ["Drugs"]
+		},
+		"Gasoline": {
+			"Weight": 1
+		},
+		"Spoiled and Diseased/Warm and Healing Milk": {
+			"Weight": 1,
+			"LinkedRollTables": ["Diseases"]
+		},
+		"Holy Water": {
+			"Weight": 1,
+			"Description": "Cures Curses"
+		},
+		"Alchemic Precursor": {
+			"Weight": 1,
+			"Description": "Reacts with Materials, different reaction every run"
+		},
+		"Blood": {
+			"Weight": 1,
+			"Description": "Either Cursed or Diseased, the former does not effect vampires",
+			"LinkedRollTables": ["Curses", "Diseases"]
+		}
+	},
+
+	"Deities": {
+		"Darwin the Saint": {
+			"Weight": 1,
+			"Description": "\nBlessing: Purify Evil, Redeption from Evil\nCurse: All Statues become inert and lack donation bowls"
+		},
+		"Dragon Charir": {
+			"Weight": 1,
+			"Description": "\nBlessing: Power at a cost\nCurse: Curse of Strife and Agitation"
+		},
+		"Mother Safili": {
+			"Weight": 1,
+			"Description": "\nBlessing: Knowledge\nCurse: Curse of the Fool, books are never magical"
+		},
+		"Lilith, Allseer": {
+			"Weight": 1,
+			"Description": "\nBlessing: Curse of the Spider, usually a powerful breed, and gain knowledge of magic\nCurse: Next few enemy rooms are veey hard fights"
+		},
+		"Lupa Luna": {
+			"Weight": 1,
+			"Description": "\nBlessing: Become a Werecreature, but you have control over shape shifting between them, and in your wereform\nCurse: Become more prone to ill, beasts dont trust you\nSide Effect: You adopt some mannerisms and diet of the Werecreature, less so from the blessing"
+		},
+		"The Grey One": {
+			"Weight": 1,
+			"Description": "\nBlessing: Room rolls are rolled twice, you can pick the one you want\nCurse: You are damned to spend your life in the dungeon"
+		},
+		"Demon Prince Ori": {
+			"Weight": 1,
+			"Description": "\nBlessing: Learn ShapeSelf\nCurse: You are hunted by Ori himself"
+		},
+		"Draz the Undead Slayer": {
+			"Weight": 1,
+			"Description": "\nBlessing: You get Curse of the Divine, but without the downsides\nCurse: You will raise as a zombie when you die, with worse stats"
+		},
+		"Glyph": {
+			"Weight": 1,
+			"Description": "\nSide Effect: You are afflicted with 'Artistic Touch'"
+		},
+		"Skaven Monument": {
+			"Weight": 1,
+			"Description": "\nBlessing: You find a useful item in the trunk\nCurse: You suffer from 2 diseases\nSide Effect: You become aware of the location of The Pit"
+		},
+		"Wabbajack": {
+			"Weight": 1,
+			"Description": "\nBlessing: You gain the Wabbajack\nCurse: You get baleful polymorphed, THEN Wabbajacked\nSide Effect: You get Wabbajacked"
+		},
+		"Sith the Father": {
+			"Weight": 1,
+			"Description": "\nBlessing: You are freed from curses, and fully healed\nCurse: Curse of the shaman\nSide Effect: If you are not a kobold or reptile, you suffer Deceptify on your next first turn of combat"
+		},
+		"Loki the Laughing God": {
+			"Weight": 1,
+			"Description": "\nBlessing: You gain a trade-off curse\nCurse: You gain a downside curse"
+		},
+		"Yol the Man-Slayer": {
+			"Weight": 1,
+			"Description": "\nBlessing: If you are a full Gnoll, body, mind and soul, you are healed, cured, uncursed, and energized\nCurse: High chance next room is a gnoll torture chamber, with a few torturers ready for you\nSide Effect: If you are not a Gnoll, you get inflicted with Curse of Yol"
+		},
+		"Father of Monsters": {
+			"Weight": 1,
+			"Description": "\nBlessing: Full Restoration of being\nCurse: You lose some features about yourselr, be it physical, magical, or psychological, either way you are aware of the loss\nSide Effect: You become a follower of the Father of Monsters, and may take monstrous traits"
+		},
+		"Teth the Huntress of Night": {
+			"Weight": 1,
+			"Description": "\nBlessing: Next combat, all your attacks have advantage, and any common tier weapons get boosted to rare tier\nCurse: Your main arm becomes limp and useless, shriveled up against your chest"
+		},
+		"Embodiment of the Hunt": {
+			"Weight": 1,
+			"Description": "\nBlessing: A raptor appears to give their assistance, for a limited time"
+		},
+		"Mother of Fear": {
+			"Weight": 1,
+			"Description": "\nBlessing: Small critters and enemies will always flee from you\nCurse: You are forced to roll on the phobia list here https://www"
+		},
+		"Bloody Mary": {
+			"Weight": 1,
+			"Description": "\nBlessing: You gain access to blood magic\nCurse: Your wounds will never heal naturally"
+		},
+		"Angela": {
+			"Weight": 1,
+			"Description": "\nBlessing: You are healed fully, there is no donation bin, you just need to pray"
+		},
+		"Derma, Demon of Gross": {
+			"Weight": 1,
+			"Description": "\nSide Effect: You get afflicted with Curse of Gross, but you can pray to the statue to reroll the curse"
+		},
+		"The Faceless": {
+			"Weight": 1,
+			"Description": "\nBlessing: You gain the ability to take the form of the next creature you have seen, and touched\nCurse: You become one of the 5 creatures you despise the most, and get a split personality of them"
+		},
+		"Chaos": {
+			"Weight": 1,
+			"Description": "\nBlessing: Random Positive Effect\nCurse: Get sent to a bad place, deformed, diseased, and/or cursed\nSide Effect: Random Negative Effect"
+		},
+		"Enigma": {
+			"Weight": 1,
+			"Description": "\nBlessing: You can 'see' magic, curses, and energy\nCurse: Using magic is more difficult, and using magic items has a chance to drain the magic"
+		},
+		"Fury": {
+			"Weight": 1,
+			"Description": "\nCurse: No matter what you do, looking at this statue curses you"
+		},
+		"Ulan The Traitor Prince": {
+			"Weight": 1,
+			"Description": "\nBlessing: Your head is turned into a cobra head, you get a venomous bite and immunity to mind control\nCurse: Your faction/species hates you, and interacting with them slowly turns you into something they hate\nSide Effect: All snakes hate you"
+		},
+		"Juxidos the Mad God": {
+			"Weight": 1,
+			"Description": "\nBlessing: You become a freak, with benefits\nCurse: same as blessing, but bad\nSide Effect: If you have their shrunken head, something will happen"
+		},
+		"Desmond the Proper": {
+			"Weight": 1,
+			"Description": "\nBlessing: Curse and Disease Immunity for 4 instances\nCurse: You are obligated to janitorial duties in the dungeon\nSide Effect: You are cured from curses and diseases"
+		},
+		"Joy the Fairy Dragon": {
+			"Weight": 1,
+			"Description": "\nBlessing: Joy will guide you for 10 rooms\nSide Effect: The statue is boobytrapped, prank trapped in some way"
+		},
+		"Alter of the Die": {
+			"Weight": 1,
+			"Description": "It is an alter with a Die of Fate on it... Do you risk rolling it?"
+		},
+		"Vessel": {
+			"Weight": 1,
+			"Description": "A statue of some Urn, you shouldn't pray to it... Or even touch it..."
+		},
+		"Rite of Passage": {
+			"Weight": 1,
+			"Description": "\nBlessing: Killing/Defeating something heals you\nSide Effect: When you receive the blessing, you receive the curse"
+		},
+		"Resin Statue": {
+			"Weight": 1,
+			"Description": "\nBlessing: You will encounter a special Xenomorph egg that gives futuristic loot"
+		},
+		"Bloodshot": {
+			"Weight": 1,
+			"Description": "\nBlessing: Some info is yours to ask OOC\nCurse: You are rendered blind, and develop characteristics of some blind creature"
+		},
+		"Cursed Font": {
+			"Weight": 1,
+			"Description": "\nSide Effect: Drinking the cursed liquid curses you, but you will gain strong benefits"
+		},
+		"The Hunger": {
+			"Weight": 1,
+			"Description": "\nSide Effect: Your teeth are disfigured, and mimic like, your mouth forever stuck in a hungry grin, your tongue is long and sticky, and you can devour people whole! Humanoids and creatures are just prey! Those you eat can be mimiced! Devour and hunt!"
+		},
+		"Rick the Greatest Poxer": {
+			"Weight": 1,
+			"Description": "\nBlessing: Curse + Blessing, or become a cursed being"
+		},
+		"Chalise of Rejuv": {
+			"Weight": 1,
+			"Description": "\nSide Effect: Drinking it fully heals, and removes curses, but permanently sticks on a curse, disease, hex, or some form of trade-off handicap"
+		},
+		"Lunar Beacon": {
+			"Weight": 1,
+			"Description": "\nBlessing: Grants a Mask of Hybridism\nCurse: Forcibly mutates you"
+		},
+		"Omen": {
+			"Weight": 1,
+			"Description": "\nSide Effect: Permanently diseased, the disease is hypercharge, and benefits you mostly, from a custom list of diseases"
+		},
+		"Tailia, The Good One": {
+			"Weight": 1,
+			"Description": "\nBlessing: Heal, offerings can be dog related things, or bits of yourself into dog"
+		},
+		"Chronos, Time Keeper": {
+			"Weight": 1,
+			"Description": "\nBlessing: Alter one thing in the past, quality depends on donation"
+		},
+		"Chef of the Gods": {
+			"Weight": 1,
+			"Description": "\nBlessing: Teleport to a safe room where a wonderful meal awaits depending on donation"
+		},
+		"Absolute": {
+			"Weight": 1,
+			"Description": "\nBlessing: Return to your most preferred state of being"
+		},
+		"Ti-Fi-Qi-Si the Hydra": {
+			"Weight": 1,
+			"Description": "\nCurse: Either temporary Beast friendship or monster friendship depending on donation\nSide Effect: Monster Races get a 'discount' for donations"
+		}
+	},
+
+	"Hexes": {
+		"Normal Curse roll": {
+			"Weight": 6,
+			"LinkedRollTables": ["Curses"]
+		},
+		"Form Degeneration": {
+			"Weight": 6
+		},
+		"Second Mind": {
+			"Weight": 3
+		},
+		"Phobia": {
+			"Weight": 5
+		}
+	},
+
+	"Languages": {
+		"Common": {
+			"Weight": 1
+		},
+		"Draconic": {
+			"Weight": 1
+		},
+		"Doggish": {
+			"Weight": 1
+		},
+		"Spiderith": {
+			"Weight": 1
+		},
+		"Slitherith": {
+			"Weight": 1
+		},
+		"Glowing Language": {
+			"Weight": 1
+		},
+		"Gunk": {
+			"Weight": 1
+		},
+		"Fiend": {
+			"Weight": 1
+		},
+		"Cockroachkin": {
+			"Weight": 1
+		},
+		"Swampish": {
+			"Weight": 1
+		},
+		"Abomination": {
+			"Weight": 1
+		},
+		"Cursed Tongue": {
+			"Weight": 1
+		}
+	},
+
+	"Species": {
+		"Human": {
+			"Weight": 1,
+			"Description": "+2 Charisma when pure, -2 Resisting Curses when pure"
+		},
+		"Elf": {
+			"Weight": 1,
+			"Description": "animals are friendlier +2 to rolls to calm animals, but you are fragile"
+		},
+		"Dwarf": {
+			"Weight": 1,
+			"Description": "you can take a beating, but have -2 on fleeing"
+		},
+		"Halfling": {
+			"Weight": 1,
+			"Description": "Eat less, +1 to dodging attacks and disease, -1 on trap rolls, Fragile"
+		},
+		"Kobold": {
+			"Weight": 1,
+			"Description": "you gain access to sacred ground, and get advantage on combat and trap rolls in it, but your small frame renders some weapons too heavy"
+		},
+		"Gnoll": {
+			"Weight": 1,
+			"Description": "everyone hates you, but when you see a fellow Gnoll get hurt, you get advantage on your next action"
+		},
+		"Spider": {
+			"Weight": 1,
+			"Description": "You have a subspecies, and do more damage, but without magic you can't pick things up larger then a ring, you also get a subspecies specific venom, and access to the Hive"
+		},
+		"Snake": {
+			"Weight": 1,
+			"Description": "you gain access to the library, you are naturally adapted to magic, getting advantage against it and with it, but no limbs, you also get venom"
+		},
+		"Ratfolk": {
+			"Weight": 1,
+			"Description": "You will always get diseased when there is a chance, but it affects them differently, the more diseased a Ratfolk gets, the more deadly they are, but the more unstable too, you need more food, but rats are friendly"
+		},
+		"Kenku": {
+			"Weight": 1,
+			"Description": "Can only mimic remembered speech, but always identifies trapped chests"
+		},
+		"Tiefling": {
+			"Weight": 1,
+			"Description": "Fiends are more friendly, +2 to resisting curse, Holy is bad for you"
+		},
+		"Freak": {
+			"Weight": 1,
+			"Description": "start with 0-2 upsides and 1-2 downsides, appearance varies"
+		},
+		"Goblin": {
+			"Weight": 1,
+			"Description": "Trap Rooms are replaced with a random other room at the beginning of each day, all rare items when found are found as their common counterparts"
+		},
+		"Lizardfork": {
+			"Weight": 1,
+			"Description": "Poisons and Venoms duration halved, Drug and Potion durations doubled, barter skills suffer, Technology skills suffer"
+		},
+		"God-Touched": {
+			"Weight": 1,
+			"Description": "Gain Plus 3 to all roles when not Oathed or Religious, but immediately bind to the first religion or oath seen, gaining other benefits and downsides"
+		},
+		"Raptor": {
+			"Weight": 1,
+			"Description": "You have access to hidden nests and tunnels, Agility, which for a turn you dodge all attacks, but your mental abilities will be most of the time shot, and instincts will control some of your life, you will forget complex things easily."
+		}
+	}
+
+}
