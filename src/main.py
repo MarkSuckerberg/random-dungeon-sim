@@ -1,6 +1,6 @@
 import json
 from classes import RollEntry, RollTable
-from user import userRoll
+from src.user import userRoll
 
 def main():
 	rollTables = GetTables()

@@ -1,6 +1,6 @@
 from flask import Flask
-from main import GetTables
-from user import DoRoll
+from src.main import GetTables
+from src.user import DoRoll
 from markupsafe import escape
 from markdown import markdown
 
