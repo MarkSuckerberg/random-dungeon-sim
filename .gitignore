@@ -1,6 +1,6 @@
-/__pycache__
-/node_modules
-/.wrangler
+__pycache__
+node_modules
+.wrangler
 
 rds-out.json
 rds.txt

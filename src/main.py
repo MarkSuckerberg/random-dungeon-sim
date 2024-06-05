@@ -1,6 +1,6 @@
 import json
 from classes import RollEntry, RollTable
-from src.user import userRoll
+from user import userRoll
 
 def main():
 	rollTables = GetTables()
@@ -24,7 +24,7 @@ def GetTables() -> dict[str, RollTable]:
 
 				linkedTables.append(linkedTable.casefold())
 
-			rollTableData.append(RollEntry(key.casefold(), value.get("Weight", 1), linkedTables, value.get("Description", "")))
+			rollTableData.append(RollEntry(key, value.get("Weight", 1), linkedTables, value.get("Description", "")))
 
 		rollTables[name.casefold()] = RollTable(name, rollTableData)
 

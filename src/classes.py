@@ -9,8 +9,8 @@ class RollEntry:
 	Description: str = ""
 
 	def __init__(self, name: str, weight: int, linkedRollTables: list[str], description: str):
-		self.Name = name
-		self.Title = name.title()
+		self.Name = name.casefold()
+		self.Title = name
 		self.Weight = weight
 		self.LinkedRollTables = linkedRollTables
 		self.Description = description
@@ -22,8 +22,8 @@ class RollTable:
 	TotalWeight: int = 0
 
 	def __init__(self, name: str, entries: list[RollEntry]):
-		self.Name = name
-		self.Title = name.title()
+		self.Name = name.casefold()
+		self.Title = name
 		self.Entries = entries
 		self.TotalWeight = sum([entry.Weight for entry in entries])
 
