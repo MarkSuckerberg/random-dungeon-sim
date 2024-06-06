@@ -1,5 +1,4 @@
-from classes import RollEntry, RollTable
-from sys import stdin
+from classes import RollTable
 
 def userRoll(rollTables: dict[str, RollTable]) -> str:
 	"""
@@ -19,27 +18,31 @@ def userRoll(rollTables: dict[str, RollTable]) -> str:
 			continue
 
 
-		print(DoRoll(rollTables, selectedTable))
+		values = GetRollList(rollTables, selectedTable)
 
-def DoRoll(rollTables: dict[str, RollTable], selectedTable: str, _depth = 0) -> str:
+		for (key, value) in values.items():
+			print(f"\033[1;4m{key}\033[0m\n{value}")
+
+def GetRollList(rollTables: dict[str, RollTable], selectedTable: str, _depth = 0) -> dict[str, str]:
 	"""
 	Rolls on the given table and returns the result.
 	"""
 	if _depth > 5:
 		return "Infinite loop detected. Stopping."
 
-	indent = "> " * _depth
+	retval = f"\nRolling on table '{selectedTable.title()}'...\n"
 
-	retval = f"\n{indent}Rolling on table '{selectedTable.title()}'...\n\n"
+	result = rollTables[selectedTable].roll()
+	entry = result[0]
 
-	entry = rollTables[selectedTable].roll()
-
-	retval += f"{indent}Rolled: {entry.Title}\n\n"
+	retval += f"Rolled {result[1]}: {entry.Title}\n"
 
 	if len(entry.Description) > 0:
-		retval += f"{indent}Description: {entry.Description}\n\n"
+		retval += f"Description: {entry.Description}\n"
+
+	retList = {entry.Title: retval}
 
 	for linkedTable in entry.LinkedRollTables:
-		retval += DoRoll(rollTables, linkedTable, _depth + 1)
+		retList.update(GetRollList(rollTables, linkedTable, _depth + 1))
 
-	return retval
+	return retList

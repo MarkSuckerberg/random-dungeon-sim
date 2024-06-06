@@ -6,7 +6,7 @@
 			"LinkedRollTables": ["Rare Loot"]
 		},
 		"Common Loot": {
-			"Weight": 7,
+			"Weight": 8,
 			"LinkedRollTables": ["Common Loot"]
 		},
 		"Trapped Chest": {
@@ -18,7 +18,7 @@
 			"LinkedRollTables": ["Traps", "Rare Loot"]
 		},
 		"Cursed Loot": {
-			"Weight": 1,
+			"Weight": 4,
 			"LinkedRollTables": ["Cursed Loot"]
 		},
 		"Weak Enemy": {
@@ -69,7 +69,12 @@
 		"Packed Chest": {
 			"Weight": 2,
 			"Description": "2-3 Rares, 0-1 cursed items, but curse when opened",
-			"LinkedRollTables": ["Rare Loot", "Rare Loot", "Rare Loot", "Cursed Loot"]
+			"LinkedRollTables": [
+				"Rare Loot",
+				"Rare Loot",
+				"Rare Loot",
+				"Cursed Loot"
+			]
 		},
 		"Statue": {
 			"Weight": 3,
@@ -2473,5 +2478,4 @@
 			"Description": "You have access to hidden nests and tunnels, Agility, which for a turn you dodge all attacks, but your mental abilities will be most of the time shot, and instincts will control some of your life, you will forget complex things easily."
 		}
 	}
-
 }

@@ -27,11 +27,12 @@ class RollTable:
 		self.Entries = entries
 		self.TotalWeight = sum([entry.Weight for entry in entries])
 
-	def roll(self):
+	def roll(self) -> tuple[RollEntry, int]:
 		roll = random.randint(1, self.TotalWeight)
+		number = roll
 		for entry in self.Entries:
 			roll -= entry.Weight
 			if roll <= 0:
-				return entry
+				return (entry, number)
 
-		return None
+		return (self.Entries[-1], number)

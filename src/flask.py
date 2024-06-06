@@ -1,6 +1,6 @@
 from flask import Flask
 from src.main import GetTables
-from src.user import DoRoll
+from src.user import GetRollList
 from markupsafe import escape
 from markdown import markdown
 
@@ -62,6 +62,11 @@ def roll_table(table):
 
 	page = f"<h1>{table.title()}</h1>\n"
 	page += f"<a href='/'>Home</a> | <a href='/{table}'>Roll again</a>\n"
-	page += markdown(DoRoll(roll_tables, table))
+
+	values = GetRollList(roll_tables, table)
+
+	for (key, value) in values.items():
+		page += f"<h2>{key}</h2>\n"
+		page += markdown(value)
 
 	return htmlHead + page + htmlFoot
