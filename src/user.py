@@ -5,7 +5,13 @@ def userRoll(rollTables: dict[str, RollTable]) -> str:
 	Allows the user to roll on a table of their choice.
 	"""
 	while True:
-		selectedTable = input("\nEnter the name of the table you want to roll on: ").casefold()
+		try:
+			selectedTable = input("\nEnter the name of the table you want to roll on: ").casefold()
+		except KeyboardInterrupt:
+			break
+
+		if selectedTable == "" or selectedTable == "exit" or selectedTable == "quit":
+			break
 
 		if selectedTable not in rollTables:
 			for table in rollTables:
@@ -23,7 +29,7 @@ def userRoll(rollTables: dict[str, RollTable]) -> str:
 		for (key, value) in values.items():
 			print(f"\033[1;4m{key}\033[0m\n{value}")
 
-def GetRollList(rollTables: dict[str, RollTable], selectedTable: str, _depth = 0) -> dict[str, str]:
+def GetRollList(rollTables: dict[str, RollTable], selectedTable: str, _depth = 0) -> tuple[dict[str, str], list[int]]:
 	"""
 	Rolls on the given table and returns the result.
 	"""
@@ -42,7 +48,12 @@ def GetRollList(rollTables: dict[str, RollTable], selectedTable: str, _depth = 0
 
 	retList = {entry.Title: retval}
 
-	for linkedTable in entry.LinkedRollTables:
-		retList.update(GetRollList(rollTables, linkedTable, _depth + 1))
+	rollNumbers = [result[1]]
 
-	return retList
+	for linkedTable in entry.LinkedRollTables:
+		rollValue = GetRollList(rollTables, linkedTable, _depth + 1)
+
+		retList.update(rollValue[0])
+		rollNumbers.extend(rollValue[1])
+
+	return (retList, rollNumbers)

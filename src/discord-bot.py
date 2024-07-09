@@ -27,9 +27,9 @@ async def table_autocomplete(interaction: discord.Interaction, current: str) -> 
 	return [app_commands.Choice(name=table.title(), value=table) for table in rollTables.keys() if (current.casefold() in table)][:25]
 
 @bot.tree.command(name='roll', description='Roll on a table')
-@app_commands.describe(table='The name of the table to roll on', public='Whether to show the result to everyone')
+@app_commands.describe(table='The name of the table to roll on', public='Whether to show the result to everyone', silent='Whether to not show even the roll numbers')
 @app_commands.autocomplete(table=table_autocomplete)
-async def roll(interaction: discord.Interaction, table: str, public: bool = False):
+async def roll(interaction: discord.Interaction, table: str = "Rooms", public: bool = False, silent: bool = False):
 	await interaction.response.send_message(f'Rolling on table {table}...', ephemeral=(not public))
 
 	table = table.casefold()
@@ -44,13 +44,17 @@ async def roll(interaction: discord.Interaction, table: str, public: bool = Fals
 		return
 
 	embed = discord.Embed(title=f"'{table.title()}' Roll Results", color=discord.Color.blue())
-	rollList = GetRollList(rollTables, table)
+	rollValues = GetRollList(rollTables, table)
 
+	rollList = rollValues[0]
 
 	for (key, value) in rollList.items():
 		embed.add_field(name=key, value=value, inline=False)
 
 	await interaction.edit_original_response(embed=embed, content=None)
+
+	if not public and not silent:
+		await interaction.followup.send(f'{interaction.user.name} rolled {str.join(", ", [str(roll) for roll in rollValues[1]])}')
 
 @bot.tree.command(name='reload', description='Reload the tables')
 async def reload(interaction: discord.Interaction):
