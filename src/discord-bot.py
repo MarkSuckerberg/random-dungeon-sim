@@ -3,8 +3,15 @@ from discord import app_commands
 from discord.ext import commands
 from json import dumps
 
+from dotenv import load_dotenv, dotenv_values
+
 from user import GetRollList
 from main import GetTables
+
+key = dotenv_values().get('TOKEN')
+
+if key is None:
+	raise ValueError('No token found in .env')
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents)
@@ -105,4 +112,4 @@ async def find(interaction: discord.Interaction, table: str, entry: str, public:
 
 	await interaction.edit_original_response(content=f"Entry '{entry}' not found in table '{table}'")
 
-bot.run()
+bot.run(key)
