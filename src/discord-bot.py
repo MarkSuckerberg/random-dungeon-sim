@@ -54,7 +54,7 @@ async def roll(interaction: discord.Interaction, table: str = "Rooms", public: b
 	await interaction.edit_original_response(embed=embed, content=None)
 
 	if not public and not silent:
-		await interaction.followup.send(f'{interaction.user.name} rolled {str.join(", ", [str(roll) for roll in rollValues[1]])}')
+		await interaction.followup.send(f'{interaction.user.nick} rolled {str.join(", ", [str(roll) for roll in rollValues[1]])}')
 
 @bot.tree.command(name='reload', description='Reload the tables')
 async def reload(interaction: discord.Interaction):
