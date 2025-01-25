@@ -2,6 +2,7 @@ __pycache__
 node_modules
 .wrangler
 .env
+db.json
 
 rds-out.json
 rds.txt
