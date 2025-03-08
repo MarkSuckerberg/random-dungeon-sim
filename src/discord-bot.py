@@ -3,19 +3,21 @@ from discord import app_commands
 from discord.ext import commands
 from json import dumps
 
-from dotenv import dotenv_values
+from dotenv import load_dotenv
+from os import getenv
 
 from user import GetRollList
 from main import GetTables
 
 from tinydb import TinyDB, Query
 
-key = dotenv_values().get("TOKEN")
+load_dotenv()
+key = getenv("TOKEN")
 
 if key is None:
     raise ValueError("No token found in .env")
 
-db = TinyDB("db.json")
+db = TinyDB("data/db.json")
 userRollsTable = db.table("users")
 
 intents = discord.Intents.default()
